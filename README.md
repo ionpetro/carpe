@@ -4,7 +4,7 @@
 
 **Live:** https://carpe-latin.vercel.app (Vercel project `carpe-latin`)
 
-**Open source** under the [MIT license](LICENSE). Free, no account, no ads. Corrections to the Latin are very welcome: open an issue or a pull request.
+**Open source** under the [MIT license](LICENSE). Free, and it will always be free. No account, no ads. The only thing we do is measure how it's used with [PostHog](https://posthog.com) (anonymous; session recordings hide anything typed) so we can make it better. Corrections to the Latin are very welcome: open an issue or a pull request.
 
 ![Carpe: Λατινικά για τις Πανελλαδικές, σαν παιχνίδι](app/brand/og.png)
 
@@ -50,7 +50,7 @@ npm run validate  # αναφορά του validator για όλες τις μο�
 npm run build     # app/dist/index.html (ένα αρχείο) + app/vercel/ (site: app, /lexiko, /about, sitemap, manifest)
 ```
 
-Τοπικά: `npm run build && python3 -m http.server 8765 --directory app/vercel` και άνοιξε `http://127.0.0.1:8765/`. Deploy: `npm run build && cd app/vercel && vercel deploy --prod` (χωρίς μεταβλητές περιβάλλοντος, χωρίς analytics). Η πρόοδος μένει στη συσκευή (`localStorage`, κλειδί `carpe:v1`), τίποτα δεν στέλνεται πουθενά.
+Τοπικά: `npm run build && python3 -m http.server 8765 --directory app/vercel` και άνοιξε `http://127.0.0.1:8765/`. Deploy: `npm run build && cd app/vercel && vercel deploy --prod` (με `POSTHOG_KEY` στο `app/.env`, που δεν μπαίνει στο git, φορτώνεται το PostHog· χωρίς αυτό, κανένα analytics). Η πρόοδος μένει στη συσκευή (`localStorage`, κλειδί `carpe:v1`). Το μόνο που στέλνουμε είναι ανώνυμα γεγονότα χρήσης στο PostHog (με `app = carpe`), για να βελτιώνουμε την εφαρμογή· οι καταγραφές συνεδριών κρύβουν ό,τι πληκτρολογείς.
 
 Χρειάζεται μόνο Node (χωρίς εξαρτήσεις). Οι γραμματοσειρές (Nunito, Cormorant Garamond) φορτώνουν από το Google Fonts και έχουν fallback.
 

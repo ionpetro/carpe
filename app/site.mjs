@@ -1,5 +1,5 @@
 // Public website for Vercel: the app at "/", a crawlable «Λεξιλόγιο» page with every word, an about
-// page, sitemap, robots, 404, web manifest and SVG icons / og image. Greek lang tags throughout. No analytics.
+// page, sitemap, robots, 404, web manifest, icons and og image. Greek lang tags throughout. PostHog analytics when POSTHOG_KEY is set.
 import { writeFileSync, mkdirSync, copyFileSync } from "node:fs";
 import { createRequire } from "node:module";
 
@@ -7,9 +7,23 @@ const require = createRequire(import.meta.url);
 const { loadUnits } = require("./src/course.js");
 
 export const SITE = "https://carpe-latin.vercel.app";
+export const REPO = "https://github.com/ionpetro/carpe";
+// PostHog (optional): set POSTHOG_KEY in app/.env. Without it no analytics code ships at all.
+const POSTHOG_KEY = process.env.POSTHOG_KEY || "";
+const POSTHOG_HOST = process.env.POSTHOG_HOST || "https://us.i.posthog.com";
+function analytics() {
+  if (!POSTHOG_KEY) return "";
+  if (!/^phc_[A-Za-z0-9]+$/.test(POSTHOG_KEY)) throw new Error("POSTHOG_KEY must be a PostHog project key (phc_...)");
+  // Official PostHog loader. Anonymous visitors only (no person profiles), inputs masked in replays.
+  return `<script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags identify setPersonProperties group resetGroups reset get_distinct_id get_session_id alias set_config startSessionRecording stopSessionRecording captureException opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init(${JSON.stringify(POSTHOG_KEY)},{api_host:${JSON.stringify(POSTHOG_HOST)},defaults:"2025-05-24",person_profiles:"identified_only",session_recording:{maskAllInputs:true}});
+posthog.register({app:"carpe",surface:"web"});</script>`;
+}
+
 const NAME = "Carpe";
 const TAGLINE = "Carpe diem. Carpe το 20.";
 const DESC = "Λατινικά για τις Πανελλαδικές (Γ΄ Λυκείου, Ανθρωπιστικές Σπουδές) σαν παιχνίδι: λέξεις, τύποι, συντακτικό και μετατροπές με τις εκφωνήσεις των εξετάσεων, σε μαθήματα των τριών λεπτών. Χωρίς καρδιές, χωρίς τιμωρίες.";
+
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap">';
@@ -23,7 +37,7 @@ function head({ title, desc, path, type = "website", jsonld = [] }) {
 <link rel="canonical" href="${url}">
 <meta property="og:type" content="${type}"><meta property="og:site_name" content="${NAME}"><meta property="og:locale" content="el_GR"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE}/og.png"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="900"><meta property="og:image:alt" content="${esc(NAME)}: ${esc(TAGLINE)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${SITE}/og.png">
-${ICONS}${FONTS}
+${ICONS}${FONTS}${analytics()}
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}`;
 }
 
@@ -41,8 +55,8 @@ table{width:100%;border-collapse:collapse;font-size:15px}td,th{padding:8px 6px;b
 .pill{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:999px;background:var(--brand-soft);color:var(--brand)}
 footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}footer a{font-weight:700}`;
 
-const nav = () => `<nav class="top" aria-label="Ιστότοπος"><a class="brand" href="/">Carpe</a><a href="/lexiko">Λεξιλόγιο</a><a href="/about">Τι είναι</a></nav>`;
-const foot = () => `<footer><p>${NAME}: ${TAGLINE} Οι τύποι ελέγχονται στη Λατινική Γραμματική του Τζάρτζανου και στο σχολικό βιβλίο (Πασχάλης–Σαββαντίδης). Τα κείμενα των μαθημάτων είναι © ΙΤΥΕ «Διόφαντος»· εδώ εμφανίζονται μόνο σύντομα αποσπάσματα. Χωρίς λογαριασμό και χωρίς παρακολούθηση: η πρόοδος μένει στη συσκευή.</p></footer>`;
+const nav = () => `<nav class="top" aria-label="Ιστότοπος"><a class="brand" href="/">Carpe</a><a href="/lexiko">Λεξιλόγιο</a><a href="/about">Τι είναι</a><a href="${REPO}">GitHub</a></nav>`;
+const foot = () => `<footer><p>${NAME}: ${TAGLINE} Οι τύποι ελέγχονται στη Λατινική Γραμματική του Τζάρτζανου και στο σχολικό βιβλίο (Πασχάλης–Σαββαντίδης). Τα κείμενα των μαθημάτων είναι © ΙΤΥΕ «Διόφαντος»· εδώ εμφανίζονται μόνο σύντομα αποσπάσματα. Το ${NAME} είναι δωρεάν και θα μείνει πάντα δωρεάν· ο κώδικας είναι ανοιχτός (MIT): <a href="${REPO}">GitHub</a>. Το μόνο που κάνουμε είναι να μετράμε με το PostHog πώς χρησιμοποιείται, για να το βελτιώνουμε. Χωρίς λογαριασμό, χωρίς διαφημίσεις.</p></footer>`;
 const page = ({ title, desc, path, body, jsonld, type }) => `<!doctype html><html lang="el"><head>${head({ title, desc, path, jsonld, type })}<style>${PAGE_CSS}</style></head><body><div class="wrap">${nav()}${body}${foot()}</div></body></html>`;
 
 /** Every word, with its unit and lesson, for the lexicon page. */
@@ -75,7 +89,7 @@ function aboutPage(units) {
       <li><b>Θέμα της ημέρας.</b> Κάθε μέρα ένα Θέμα των Πανελλαδικών, βαθμολογημένο με τις μονάδες του.</li>
       <li><b>Χωρίς τιμωρία.</b> Ούτε καρδιές ούτε ζωές. Τα Σαββατοκύριακα δεν σπάνε το σερί.</li></ul>
     <h2>Ακρίβεια</h2><p>Κάθε κάρτα δηλώνει πού ελέγχθηκε: στο σχολικό βιβλίο, στη Γραμματική Τζάρτζανου ή σε θέμα και κλειδί Πανελλαδικών (με τη χρονιά). Όσα δεν έχουν ελεγχθεί σημειώνονται «προς έλεγχο». Δεν λέμε «πιθανότητες»: λέμε μόνο τι ζητήθηκε στα διαγωνίσματα 2022-2026.</p>
-    <h2>Απόρρητο</h2><p>Χωρίς λογαριασμό, χωρίς αναλυτικά. Η πρόοδος μένει στον περιηγητή σου.</p>
+    <h2>Δωρεάν, ανοιχτό, και τι μετράμε</h2><p>Το ${NAME} είναι δωρεάν και θα μείνει πάντα δωρεάν. Ο κώδικας είναι ανοιχτός με άδεια MIT: <a href="${REPO}">github.com/ionpetro/carpe</a>. Χωρίς λογαριασμό, χωρίς διαφημίσεις. Το μόνο που κάνουμε είναι να μετράμε ανώνυμα με το <a href="https://posthog.com">PostHog</a> πώς χρησιμοποιείται η εφαρμογή (ποια μαθήματα ξεκινάς και τελειώνεις, πού δυσκολεύεσαι) και να βλέπουμε καταγραφές συνεδριών όπου ό,τι πληκτρολογείς είναι κρυμμένο. Έτσι βρίσκουμε τι να διορθώσουμε. Η πρόοδός σου μένει στον περιηγητή σου.</p>
     <a class="cta" href="/">Ξεκίνα</a>`;
   return page({ title: `Τι είναι το ${NAME}`, desc: DESC, path: "/about", body, jsonld: [{ "@context": "https://schema.org", "@type": "AboutPage", name: `Τι είναι το ${NAME}`, inLanguage: "el", url: `${SITE}/about` }] });
 }
@@ -91,7 +105,7 @@ function appPage(appMarkup, units) {
   const app = appMarkup.replace(/<title>[^<]*<\/title>\s*/, "").replace(/<meta (charset|name="(description|viewport)")[^>]*>\s*/g, "").replace(/<link rel="(preconnect|stylesheet)"[^>]*>\s*/g, "");
   const words = lexicon(units).length;
   const fallback = `<noscript><div style="max-width:640px;margin:24px auto;padding:0 16px;font-family:system-ui"><h1>${NAME}: ${TAGLINE}</h1><p>${esc(DESC)}</p><p><a href="/lexiko">Λεξιλόγιο (${words} λέξεις)</a> · <a href="/about">Τι είναι</a></p></div></noscript>`;
-  const footer = `<footer class="site-foot" aria-label="Περισσότερα"><a href="/lexiko">Λεξιλόγιο</a><a href="/about">Τι είναι το Carpe</a></footer>`;
+  const footer = `<footer class="site-foot" aria-label="Περισσότερα"><a href="/lexiko">Λεξιλόγιο</a><a href="/about">Τι είναι το Carpe</a><a href="${REPO}">Δωρεάν για πάντα · ανοιχτός κώδικας στο GitHub</a></footer>`;
   return `<!doctype html><html lang="el"><head>${head({ title: `${NAME}: Λατινικά για τις Πανελλαδικές, 3 λεπτά τη μέρα`, desc: DESC, path: "/", jsonld })}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}img{max-width:100%}
 .site-foot{max-width:560px;margin:-8px auto 0;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;font:700 13px/1.4 Nunito,system-ui,sans-serif;padding:0 max(16px,env(safe-area-inset-right,0px)) calc(96px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}

@@ -14,8 +14,19 @@
   const seed = () => Math.floor(Math.random() * 2 ** 31);
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
+  /** Product analytics. Only the public website loads PostHog (see site.mjs); elsewhere this does nothing. */
+  function track(event, props = {}) {
+    try { if (window.posthog && typeof window.posthog.capture === "function") window.posthog.capture(event, props); } catch { /* analytics must never break the app */ }
+  }
+  const REPO = "https://github.com/ionpetro/carpe";
+  /** Link to the open source code. `where` says which button was clicked, for analytics. */
+  const ghLink = (cls, where, inner) => `<a class="${cls}" href="${REPO}" target="_blank" rel="noopener" data-gh="${where}" aria-label="Ο κώδικας του Carpe στο GitHub">${inner}</a>`;
+  /** The promise shown on every main screen: free forever, open code, and the one thing we track. */
+  const FREE_NOTE = "Το Carpe είναι δωρεάν και θα μείνει πάντα δωρεάν. Ο κώδικας είναι ανοιχτός (MIT). Το μόνο που κάνουμε: μετράμε με το PostHog πώς χρησιμοποιείται, για να το κάνουμε καλύτερο. Χωρίς λογαριασμό, χωρίς διαφημίσεις.";
+
   // ---------- icons ----------
   const I = {
+    github: '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>',
     flame: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1 3.5-1.6 5.3-2.9 7.3C7.6 11.5 7 13 7 14.6 7 18.1 9.3 21 12 21s5-2.6 5-6.2c0-2.1-.9-3.7-2-5 .1 1.6-.5 2.8-1.6 3.3.5-3.6-.6-7.6-1.4-11.1z"/></svg>',
     coin: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="currentColor"/><text x="12" y="16" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="var(--surface)">D</text></svg>',
     shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 7.6 8 9 4.6-1.4 8-4.5 8-9V6z"/><path d="M12 7v10M8 12h8"/></svg>',
@@ -130,6 +141,51 @@
     return E.freshState();
   }
   let S = loadLocal();
+  /** Progress numbers PostHog attaches to every event, so any event can be cut by how far along someone is. */
+  function progressProps() {
+    return { xp: S.xp, streak: S.streak, best_streak: S.bestStreak, goal_xp: S.goal, lessons_done: Object.keys(S.done || {}).length, answered: S.answered, correct: S.correct,
+      accuracy_all: S.answered ? Math.round((S.correct / S.answered) * 100) / 100 : null, days_active: Object.keys(S.days || {}).length,
+      colosseum_best: S.colosseumBest, mocks_taken: (S.mocks || []).length, onboarded: !!S.onboarded };
+  }
+  function syncProgress() {
+    try { if (window.posthog && typeof window.posthog.register === "function") window.posthog.register(progressProps()); } catch { /* optional */ }
+  }
+  const dayGap = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / 864e5);
+  const VISIT_KEY = "carpe.visit";
+  /** Once per page load: new or returning, where they first came from, days to the exam, and whether the streak broke. */
+  function trackAppOpened() {
+    if (!window.posthog) return;
+    let v = {};
+    try { v = JSON.parse(localStorage.getItem(VISIT_KEY) || "{}") || {}; } catch { /* storage can be blocked */ }
+    const t = today();
+    const qs = new URLSearchParams(location.search);
+    const campaign = {};
+    for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "ref"]) if (qs.get(k)) campaign[k] = qs.get(k);
+    let refHost = null;
+    try { refHost = document.referrer ? new URL(document.referrer).hostname : null; } catch { /* bad referrer */ }
+    if (refHost === location.hostname) refHost = null;
+    const firstVisit = !v.first;
+    if (firstVisit) { v.first = t; v.source = campaign.utm_source || campaign.ref || refHost || "direct"; }
+    const daysSinceLast = v.last ? dayGap(v.last, t) : null;
+    v.last = t;
+    try { localStorage.setItem(VISIT_KEY, JSON.stringify(v)); } catch { /* fine */ }
+    try { window.posthog.register({ first_source: v.source, first_seen: v.first }); } catch { /* optional */ }
+    syncProgress();
+    const streakLost = S.streak > 0 && E.liveStreak(S, t) === 0;
+    track("app_opened", { first_visit: firstVisit, days_since_last_visit: daysSinceLast, referrer_host: refHost, ...campaign, streak_lost: streakLost, entry_tab: location.hash.slice(1) || null, days_to_exam: S.examDate ? dayGap(t, S.examDate) : null });
+    if (streakLost) track("streak_lost", { lost_streak: S.streak, last_active: S.lastDay });
+  }
+  /** After XP is added: goal and streak events. */
+  function trackDayProgress(prevTodayXp, st) {
+    const now = S.days[today()] || 0;
+    if (prevTodayXp < S.goal && now >= S.goal) track("daily_goal_reached", { goal_xp: S.goal, today_xp: now });
+    if (st && st.streakUp) track("streak_extended", { streak: S.streak, best_streak: S.bestStreak, used_freeze: st.usedFreeze > 0 });
+  }
+  /** Which run this is: attached to every lesson event. */
+  const runProps = () => (run ? { mode: run.mode, node_id: run.node ? run.node.id : null, unit_id: run.node ? run.node.unitId || null : null, sitting: run.sitting ?? null, steps: run.steps.length } : {});
+  /** What one question is (type, item, exam section), so answers can be cut per word and per Θέμα. */
+  const stepProps = (q) => ({ step_index: run ? run.i : null, q_type: q.type, item_id: q.itemId || (q.itemIds || [])[0] || null, item_ids: q.itemIds || null, section: q.section || null, guess: !!q.guess, requeued: run ? run.requeued.has(run.i) : false, label: q.label || null });
+
   function save() {
     S.updatedAt = Date.now();
     try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch { /* private mode: progress lives for this session only */ }
@@ -138,7 +194,7 @@
   // ---------- UI state ----------
   const ui = { tab: "learn", overlay: null, lexFilter: "all", lexQuery: "", confirmReset: false };
   const TABS = [{ id: "learn", label: "Μάθε", icon: I.road }, { id: "lex", label: "Λεξικό", icon: I.scroll }, { id: "me", label: "Εγώ", icon: I.helmet }];
-  function setTab(id) { ui.tab = id; if (location.hash !== `#${id}`) history.replaceState(null, "", `#${id}`); render(); scrollTo(0, 0); }
+  function setTab(id) { if (id !== ui.tab) track("tab_viewed", { tab: id }); ui.tab = id; if (location.hash !== `#${id}`) history.replaceState(null, "", `#${id}`); render(); scrollTo(0, 0); }
   addEventListener("hashchange", () => { const h = location.hash.slice(1); if (TABS.some((t) => t.id === h) && h !== ui.tab) { ui.tab = h; render(); } });
   const app = () => $("#app");
 
@@ -150,12 +206,14 @@
         <span class="stat flame ${active ? "" : "cold"}" title="${active ? "Το σερί είναι ασφαλές για σήμερα" : "Κάνε ένα μάθημα για να κρατήσεις το σερί"}">${I.flame}<span>${st}</span></span>
         <span class="stat" title="Άδειες (streak freezes)" style="color:var(--brand)">${I.shield}<span>${S.freezes}</span></span>
         <span class="stat xp" title="Δηνάρια">${I.coin}<span>${S.xp}</span></span>
-      </div></header>`;
+      </div>
+      ${ghLink("gh", "topbar", `${I.github}<span class="gh-label">GitHub</span>`)}
+    </header>`;
   }
   function tabbar() {
     return `<nav class="tabbar" aria-label="Ενότητες"><div class="tabbar-inner">${TABS.map((t) => `<button class="tab" data-tab="${t.id}" ${ui.tab === t.id ? 'aria-current="page"' : ""}>${t.icon}<span>${t.label}</span></button>`).join("")}</div></nav>`;
   }
-  function siteNote() { return `<footer class="sitenote"><p>Carpe: Λατινικά για τις Πανελλαδικές. Η πρόοδος αποθηκεύεται σ' αυτή τη συσκευή. Οι τύποι ελέγχονται στη Γραμματική Τζάρτζανου και στο σχολικό βιβλίο· όπου υπάρχει αμφιβολία, η κάρτα το λέει.</p></footer>`; }
+  function siteNote() { return `<footer class="sitenote"><p><b>${FREE_NOTE}</b></p>${ghLink("btn ghost gh-cta", "footer", `${I.github}<span>Ο κώδικας στο GitHub</span>`)}<p>Η πρόοδος αποθηκεύεται σ' αυτή τη συσκευή. Οι τύποι ελέγχονται στη Γραμματική Τζάρτζανου και στο σχολικό βιβλίο· όπου υπάρχει αμφιβολία, η κάρτα το λέει.</p></footer>`; }
 
   function render() {
     if (!S.onboarded) { app().innerHTML = onboarding(); bindOnboarding(); return; }
@@ -179,11 +237,13 @@
       </div>
       <button class="btn block gold" id="ob-go">Ξεκινάμε</button>
       <p class="muted" style="text-align:center;font-size:13px;font-weight:700">Τα Σαββατοκύριακα δεν σπάνε το σερί. Η πρόοδος μένει σ' αυτή τη συσκευή.</p>
+      <footer class="sitenote"><p>${FREE_NOTE}</p>${ghLink("btn ghost gh-cta", "onboarding", `${I.github}<span>Ο κώδικας στο GitHub</span>`)}</footer>
     </div>`;
   }
   function bindOnboarding() {
     $$("[data-goal]").forEach((b) => b.addEventListener("click", () => { S.goal = +b.dataset.goal; S.name = $("#ob-name").value.trim(); render(); }));
-    $("#ob-go").addEventListener("click", () => { S.name = $("#ob-name").value.trim(); S.onboarded = true; save(); render(); const n = E.nextNode(IX, S); if (n) startNode(n); });
+    $$("[data-gh]").forEach((a) => a.addEventListener("click", () => track("github_clicked", { where: a.dataset.gh })));
+    $("#ob-go").addEventListener("click", () => { S.name = $("#ob-name").value.trim(); S.onboarded = true; save(); track("onboarding_completed", { goal: S.goal }); render(); const n = E.nextNode(IX, S); if (n) startNode(n); });
   }
 
   // ---------- learn tab ----------
@@ -332,9 +392,10 @@
   // ---------- wiring ----------
   function bindCommon() {
     const root = app();
+    $$("[data-gh]", root).forEach((a) => a.addEventListener("click", () => track("github_clicked", { where: a.dataset.gh })));
     $$("[data-tab]", root).forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tab)));
     $$("[data-start]", root).forEach((b) => b.addEventListener("click", () => startNode(E.pathNodes(IX).find((n) => n.id === b.dataset.start))));
-    $$("[data-goal]", root).forEach((b) => b.addEventListener("click", () => { S.goal = +b.dataset.goal; save(); render(); }));
+    $$("[data-goal]", root).forEach((b) => b.addEventListener("click", () => { const from = S.goal; S.goal = +b.dataset.goal; if (from !== S.goal) track("goal_changed", { from_xp: from, to_xp: S.goal }); save(); render(); }));
     $$("[data-filter]", root).forEach((b) => b.addEventListener("click", () => { ui.lexFilter = b.dataset.filter; render(); }));
     const act = (a, fn) => { const el = root.querySelector(`[data-act="${a}"]`); if (el) el.addEventListener("click", fn); };
     act("practice", () => startRun("practice"));
@@ -344,15 +405,15 @@
     act("swipe", () => startRun("swipe"));
     act("colosseum", () => startColosseum());
     const q = $("#lex-q");
-    if (q) q.addEventListener("input", (e) => { ui.lexQuery = e.target.value; const pos = e.target.selectionStart; render(); const n = $("#lex-q"); n.focus(); n.setSelectionRange(pos, pos); });
+    if (q) q.addEventListener("input", (e) => { clearTimeout(ui.lexTimer); const v = e.target.value.trim(); ui.lexTimer = setTimeout(() => { if (v) track("lexicon_searched", { query: v.slice(0, 40), filter: ui.lexFilter || null }); }, 1200); ui.lexQuery = e.target.value; const pos = e.target.selectionStart; render(); const n = $("#lex-q"); n.focus(); n.setSelectionRange(pos, pos); });
     const on = (id, ev, fn) => { const el = $(id); if (el) el.addEventListener(ev, fn); };
     on("#set-name", "change", (e) => { S.name = e.target.value.trim(); save(); });
-    on("#set-exam", "change", (e) => { if (/^\d{4}-\d{2}-\d{2}$/.test(e.target.value)) { S.examDate = e.target.value; save(); render(); } });
-    on("#set-school", "change", (e) => { const v = +e.target.value; if (v >= 16 && v <= 50) { S.schoolLesson = v; save(); } });
-    on("#set-sound", "change", (e) => { S.sound = e.target.checked; save(); });
+    on("#set-exam", "change", (e) => { if (/^\d{4}-\d{2}-\d{2}$/.test(e.target.value)) { track("setting_changed", { setting: "exam_date", value: e.target.value }); S.examDate = e.target.value; save(); render(); } });
+    on("#set-school", "change", (e) => { const v = +e.target.value; if (v >= 16 && v <= 50) { track("setting_changed", { setting: "school_lesson", value: v }); S.schoolLesson = v; save(); } });
+    on("#set-sound", "change", (e) => { S.sound = e.target.checked; track("setting_changed", { setting: "sound", value: S.sound }); save(); });
     on("#reset", "click", () => { ui.confirmReset = true; render(); });
     on("#reset-no", "click", () => { ui.confirmReset = false; render(); });
-    on("#reset-yes", "click", () => { const keep = { sound: S.sound, name: S.name }; S = Object.assign(E.freshState(), keep); ui.confirmReset = false; save(); render(); });
+    on("#reset-yes", "click", () => { track("progress_reset", progressProps()); const keep = { sound: S.sound, name: S.name }; S = Object.assign(E.freshState(), keep); ui.confirmReset = false; save(); render(); });
   }
 
   // ---------- runner ----------
@@ -373,6 +434,7 @@
     else if (mode === "mock") { const m = E.buildMock(IX, S, sd); steps = m.steps; meta = { marks: m.marks }; }
     else if (mode === "swipe") { const sw = E.buildSwipe(IX, S, sd); steps = sw ? [sw] : []; }
     if (!steps.length) { toast("Δεν υπάρχει κάτι να κάνεις εδώ ακόμη"); return; }
+    track("lesson_started", { mode, node_id: node ? node.id : null, unit_id: node ? node.unitId || null : null, steps: steps.length });
     run = { mode, node, steps, i: 0, misses: 0, combo: 0, maxCombo: 0, right: 0, scored: 0, requeued: new Set(), answered: false, start: Date.now(), results: [], ...meta };
     ui.overlay = "lesson";
     if (mode === "daily") introScreen(`Θέμα της ημέρας · ${esc(meta.daily.title)}`, `Όπως στις Πανελλαδικές: ${meta.daily.marks} μονάδες, ${plural(steps.length, "ερώτηση", "ερωτήσεις")}. Ίδιο θέμα όλη μέρα, αν το ξανανοίξεις.`, "Πάμε");
@@ -393,6 +455,8 @@
   }
   /** X or Escape. A run with graded answers asks first; the Colosseum and an untouched run just close. */
   function requestClose() {
+    const quitProps = () => ({ ...runProps(), at_step: run.i, answered: run.scored, right: run.right, seconds: Math.round((Date.now() - run.start) / 1000) });
+    if (run && !run.finished && run.mode !== "colosseum" && run.scored === 0) track("lesson_quit", quitProps());
     if (!run || run.finished || run.mode === "colosseum" || run.scored === 0) return closeRun();
     if ($(".quitbox")) return;
     const box = document.createElement("div");
@@ -400,7 +464,7 @@
     box.innerHTML = `<div class="card"><p>Φεύγεις; Ό,τι απάντησες μετράει στην επανάληψη, αλλά το μάθημα μένει στη μέση.</p><div class="row"><button class="btn ghost" id="quit-stay">Μένω</button><button class="btn clay" id="quit-go">Φεύγω</button></div></div>`;
     document.body.appendChild(box);
     $("#quit-stay").addEventListener("click", () => box.remove());
-    $("#quit-go").addEventListener("click", () => { save(); closeRun(); });
+    $("#quit-go").addEventListener("click", () => { track("lesson_quit", quitProps()); save(); closeRun(); });
     box.addEventListener("click", (e) => { if (e.target === box) box.remove(); });
     $("#quit-stay").focus();
   }
@@ -424,6 +488,8 @@
     if (run.i >= run.steps.length) return finishRun();
     run.answered = false;
     const q = run.steps[run.i];
+    run.stepAt = Date.now();
+    track("lesson_step_viewed", { ...runProps(), ...stepProps(q) });
     const draw = { intro: drawIntro, mcq: drawMcq, tf: drawTf, build: drawBuild, match: drawMatch, slots: drawSlots, bucket: drawBucket, find: drawFind, steps: drawSteps, transform: drawTransform, spot: drawSpot, type: drawType, swipe: drawSwipe }[q.type];
     if (draw) draw(q); else advance();
   }
@@ -749,6 +815,7 @@
 
   function resolve(q, ok, why = null, score = ok ? 1 : 0) {
     clearTimeout(timer);
+    track("question_answered", { ...runProps(), ...stepProps(q), correct: !!ok, score, graded: !q.guess, ms: run.stepAt ? Date.now() - run.stepAt : null, combo: ok ? run.combo + 1 : 0 });
     const t = today();
     if (q.guess) { (ok ? sfx.right : sfx.tick)(); showFeedback(true, ok ? "Καλό ένστικτο!" : pick(GUESS), q, true); return; }
     run.scored += 1; S.answered += 1;
@@ -795,8 +862,10 @@
     const base = { lesson: 10, roundup: 15, practice: 8, notebook: 8, daily: 10, mock: 15, swipe: 5 }[run.mode] || 8;
     const gained = base + (perfect && run.scored > 0 ? 5 : 0) + (run.maxCombo >= 5 ? 2 : 0);
     const wasActive = S.lastDay === t;
+    const prevTodayXp = S.days[t] || 0;
     E.addXp(S, t, gained);
     const st = E.touchStreak(S, t);
+    trackDayProgress(prevTodayXp, st);
     if (run.mode === "practice" || run.mode === "notebook") S.practices += 1;
     let sittingLine = "";
     if (run.node && run.mode === "lesson") {
@@ -821,6 +890,10 @@
     const fresh = E.awardBadges(S, t, IX);
     save();
     run.finished = true;
+    const marksGot = Object.values(sections).reduce((a, [g]) => a + g, 0), marksMax = Object.values(sections).reduce((a, [, m]) => a + m, 0);
+    track("lesson_completed", { ...runProps(), accuracy: run.scored ? run.right / run.scored : 1, perfect, misses: run.misses, xp: gained, seconds: Math.round((Date.now() - run.start) / 1000), max_combo: run.maxCombo, streak: S.streak, used_freeze: !!(st && st.usedFreeze), marks_got: marksMax ? Math.round(marksGot * 10) / 10 : null, marks_max: marksMax || null, sections: marksMax ? sections : null });
+    for (const b of fresh) track("badge_earned", { badge: b.id || b.name });
+    syncProgress();
     const acc = run.scored ? Math.round((run.right / run.scored) * 100) : 100;
     const secs = Math.round((Date.now() - run.start) / 1000);
     sfx.done(); if (perfect || fresh.length || run.mode === "mock") confetti();
@@ -848,6 +921,7 @@
   // ---------- Κολοσσαίο ----------
   let timer = null;
   function startColosseum() {
+    track("colosseum_started", { best: S.colosseumBest });
     run = { mode: "colosseum", node: null, steps: [], i: 0, misses: 0, combo: 0, maxCombo: 0, right: 0, scored: 0, requeued: new Set(), answered: false, start: Date.now(), results: [], r: E.rng(seed()) };
     ui.overlay = "lesson";
     shell(`<div class="results">${mascot("gladiator")}<h1>Κολοσσαίο</h1><p class="story" style="max-width:34ch">Κάθε ερώτηση είναι ένας μονομάχος: 20 δευτερόλεπτα, τρεις επιλογές. Ένα λάθος και η αρένα κλείνει. Πόσους θα νικήσεις;</p><p class="muted" style="font-weight:800">Ρεκόρ: ${S.colosseumBest}</p></div>`, footerBtn("Άνοιξε τις πύλες", "gold"));
@@ -871,8 +945,12 @@
     const best = score > S.colosseumBest;
     if (best) S.colosseumBest = score;
     const gained = Math.min(score * 3, 30);
-    if (gained > 0) { E.addXp(S, t, gained); E.touchStreak(S, t); }
+    const prevTodayXp = S.days[t] || 0;
+    if (gained > 0) { E.addXp(S, t, gained); trackDayProgress(prevTodayXp, E.touchStreak(S, t)); }
     const fresh = E.awardBadges(S, t, IX);
+    track("colosseum_finished", { wins: score, new_best: best && score > 0, best: S.colosseumBest, xp: gained, seconds: Math.round((Date.now() - run.start) / 1000) });
+    for (const b of fresh) track("badge_earned", { badge: b.id || b.name });
+    syncProgress();
     save();
     run.finished = true;
     if (best && score > 0) confetti();
@@ -901,4 +979,5 @@
   const h = location.hash.slice(1);
   if (TABS.some((t) => t.id === h)) ui.tab = h;
   render();
+  trackAppOpened();
 })();

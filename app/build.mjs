@@ -5,6 +5,13 @@ import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
 const { unitFiles } = require("./src/course.js");
+// Load app/.env (optional) before site.mjs reads POSTHOG_KEY. Format: KEY=value per line.
+try {
+  for (const line of readFileSync(new URL("./.env", import.meta.url), "utf8").split("\n")) {
+    const m = line.match(/^\s*([A-Z_][A-Z0-9_]*)\s*=\s*(.*?)\s*$/);
+    if (m && !(m[1] in process.env)) process.env[m[1]] = m[2].replace(/^["']|["']$/g, "");
+  }
+} catch { /* no .env: build without analytics */ }
 const { buildSite } = await import("./site.mjs");
 
 const r = (p) => readFileSync(new URL(p, import.meta.url), "utf8");
