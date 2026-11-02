@@ -1,0 +1,1608 @@
+{
+ "meta": {
+  "description": "Real morphology (Θέμα Γ / Β) items from Panhellenic Latin papers, with the answer(s) from published suggested keys, cross-checked against the school grammar (Tzartzanos). Use as regression tests for the morphology engine and as an optional \"past paper\" mode.",
+  "sources": [
+   "https://www.panellinies.net/ (papers and keys; main sessions 2020, 2022-2026)",
+   "Tzartzanos, Λατινική Γραμματική, ebooks.edu.gr"
+  ],
+  "caveats": [
+   "Published keys are suggestions, not official; they contain typos (see morphology.md section 1.5).",
+   "Several items are context-dependent (e.g. quidam, idem): the passage form fixes the answer; the original passage is not included here.",
+   "Resit papers (Επαναληπτικές) not included because no answer key was read."
+  ],
+  "count": 143
+ },
+ "items": [
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "squalidā",
+   "ask_gr": "την αιτιατική του πληθυντικού αριθμού στο ίδιο γένος στον συγκριτικό βαθμό",
+   "answers": [
+    "squalidiores"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "similem",
+   "ask_gr": "τον αντίστοιχο τύπο στον υπερθετικό βαθμό",
+   "answers": [
+    "simillimum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "effigiēi",
+   "ask_gr": "την αιτιατική του πληθυντικού αριθμού",
+   "answers": [
+    "effigies"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "quidam",
+   "ask_gr": "τη γενική του ενικού αριθμού στο ουδέτερο γένος",
+   "answers": [
+    "cuiusdam"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "parem salutatiōnem",
+   "ask_gr": "τη γενική του πληθυντικού αριθμού",
+   "answers": [
+    "parium salutationum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "Diu",
+   "ask_gr": "τον συγκριτικό βαθμό του επιρρήματος",
+   "answers": [
+    "diutius"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "more prisco",
+   "ask_gr": "την ονομαστική του ίδιου αριθμού",
+   "answers": [
+    "mos priscus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "omen nuptiāle",
+   "ask_gr": "την αιτιατική του πληθυντικού αριθμού",
+   "answers": [
+    "omina nuptialia"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "sacello quodam",
+   "ask_gr": "την ονομαστική του ενικού αριθμού",
+   "answers": [
+    "sacellum quoddam"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "nocte",
+   "ask_gr": "τη γενική του πληθυντικού αριθμού",
+   "answers": [
+    "noctium"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B1",
+   "form": "aliqua",
+   "ask_gr": "την ονομαστική του ενικού αριθμού στο αρσενικό γένος",
+   "answers": [
+    "aliqui"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "Existimāvit",
+   "ask_gr": "το α΄ πληθυντικό πρόσωπο της υποτακτικής του υπερσυντελίκου στην ίδια φωνή",
+   "answers": [
+    "existimavissemus",
+    "existimassemus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "venīre",
+   "ask_gr": "τη δοτική του γερουνδίου",
+   "answers": [
+    "veniendo"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "aspexit",
+   "ask_gr": "το β΄ ενικό πρόσωπο της υποτακτικής του παρατατικού στην άλλη φωνή",
+   "answers": [
+    "aspicereris",
+    "aspicerere"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "concēpit",
+   "ask_gr": "το β΄ ενικό πρόσωπο της προστακτικής του ενεστώτα στην άλλη φωνή",
+   "answers": [
+    "concipere"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "cupīvit",
+   "ask_gr": "το γ΄ πληθυντικό πρόσωπο της οριστικής του μέλλοντα στην ίδια φωνή",
+   "answers": [
+    "cupient"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "redīret",
+   "ask_gr": "τη γενική του ενικού αριθμού της μετοχής του ενεστώτα στο γένος του υποκειμένου",
+   "answers": [
+    "redeuntis"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "instituerat",
+   "ask_gr": "την αφαιρετική του σουπίνου",
+   "answers": [
+    "institutu"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "dicere",
+   "ask_gr": "το β΄ ενικό πρόσωπο της προστακτικής του ενεστώτα στην ίδια φωνή",
+   "answers": [
+    "dic"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "Ave",
+   "ask_gr": "το β΄ πληθυντικό πρόσωπο της προστακτικής του ενεστώτα",
+   "answers": [
+    "avete"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "interfuit",
+   "ask_gr": "το απαρέμφατο του ενεστώτα",
+   "answers": [
+    "interesse"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "emere",
+   "ask_gr": "το απαρέμφατο του παρακειμένου στην ίδια φωνή",
+   "answers": [
+    "emisse"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "docēret",
+   "ask_gr": "το β΄ πληθυντικό πρόσωπο της υποτακτικής του υπερσυντελίκου στην ίδια φωνή",
+   "answers": [
+    "docuissetis"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "petit",
+   "ask_gr": "την αφαιρετική του γερουνδίου",
+   "answers": [
+    "petendo"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "fēcit",
+   "ask_gr": "το γ΄ ενικό πρόσωπο της υποτακτικής του παρατατικού στην άλλη φωνή",
+   "answers": [
+    "fieret"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2020,
+   "session": "main-old-system",
+   "part": "B2",
+   "form": "persedēbat",
+   "ask_gr": "το γ΄ πληθυντικό πρόσωπο της οριστικής του συντελεσμένου μέλλοντα στην ίδια φωνή",
+   "answers": [
+    "persederint"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "Nostri",
+   "ask_gr": "την ονομαστική του ενικού αριθμού στο ίδιο γένος",
+   "answers": [
+    "noster"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "hostes",
+   "ask_gr": "την αφαιρετική του ίδιου αριθμού",
+   "answers": [
+    "hostibus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "terga",
+   "ask_gr": "τη γενική του ίδιου αριθμού",
+   "answers": [
+    "tergorum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "equites",
+   "ask_gr": "την ονομαστική στον άλλο αριθμό",
+   "answers": [
+    "eques"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "magna",
+   "ask_gr": "την αφαιρετική του ενικού αριθμού στον συγκριτικό βαθμό του ίδιου γένους",
+   "answers": [
+    "maiore"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "caedes",
+   "ask_gr": "τη δοτική του ίδιου αριθμού",
+   "answers": [
+    "caedi"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "Ille",
+   "ask_gr": "την ονομαστική του ενικού αριθμού στο ουδέτερο γένος και τη γενική του ενικού αριθμού στο θηλυκό γένος",
+   "answers": [
+    "illud",
+    "illius"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "eum",
+   "ask_gr": "την αιτιατική του ενικού αριθμού στο ουδέτερο γένος",
+   "answers": [
+    "id"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "pondus",
+   "ask_gr": "την ονομαστική στον άλλο αριθμό",
+   "answers": [
+    "pondera"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "vultum",
+   "ask_gr": "τη γενική στον ίδιο αριθμό",
+   "answers": [
+    "vultus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "rem (3ο απόσπασμα)",
+   "ask_gr": "την αφαιρετική του ίδιου αριθμού",
+   "answers": [
+    "re"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "celeriter",
+   "ask_gr": "τους άλλους δύο βαθμούς του επιρρήματος",
+   "answers": [
+    "celerius",
+    "celerrime"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ1",
+   "form": "periculum",
+   "ask_gr": "την ίδια πτώση στον άλλο αριθμό",
+   "answers": [
+    "pericula"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "gerunt",
+   "ask_gr": "το ίδιο πρόσωπο στην οριστική του συντελεσμένου μέλλοντα στην ίδια φωνή",
+   "answers": [
+    "gesserint"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "cernitur",
+   "ask_gr": "το ίδιο πρόσωπο στην οριστική μέλλοντα στην ίδια φωνή",
+   "answers": [
+    "cernetur"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "Fit",
+   "ask_gr": "το β΄ πληθυντικό πρόσωπο της προστακτικής του ενεστώτα",
+   "answers": [
+    "fite"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "mirāti sunt",
+   "ask_gr": "το απαρέμφατο του μέλλοντα και του συντελεσμένου μέλλοντα (να ληφθεί υπόψη το υποκείμενο)",
+   "answers": [
+    "miraturos esse",
+    "miratos fore"
+   ],
+   "note": "future-perfect infinitive not in S1 paradigm tables; UNSURE of marking"
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "attulissent",
+   "ask_gr": "την αιτιατική στο σουπίνο",
+   "answers": [
+    "allatum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "uterētur",
+   "ask_gr": "τις μετοχές του ρήματος στην ονομαστική ενικού του αρσενικού γένους",
+   "answers": [
+    "utens",
+    "usurus",
+    "usus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "dixit",
+   "ask_gr": "το β΄ ενικό πρόσωπο της προστακτικής του ενεστώτα στην ίδια φωνή",
+   "answers": [
+    "dic"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "curat",
+   "ask_gr": "το α΄ πληθυντικό πρόσωπο της οριστικής του μέλλοντα στην ίδια φωνή",
+   "answers": [
+    "curabimus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "mittit",
+   "ask_gr": "το γ΄ ενικό πρόσωπο της οριστικής του παρακειμένου στην ίδια φωνή",
+   "answers": [
+    "misit"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "adīre",
+   "ask_gr": "την αφαιρετική του γερουνδίου",
+   "answers": [
+    "adeundo"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "possit",
+   "ask_gr": "το ίδιο πρόσωπο στην υποτακτική του υπερσυντελίκου",
+   "answers": [
+    "potuisset"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2022,
+   "session": "main",
+   "part": "Γ2",
+   "form": "abiciat",
+   "ask_gr": "το β΄ ενικό πρόσωπο της προστακτικής του ενεστώτα στην ίδια φωνή",
+   "answers": [
+    "abice"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "nocte",
+   "ask_gr": "(Γ1α) τέσσερα ουσιαστικά γ΄ κλίσης στη γενική πληθυντικού",
+   "answers": [
+    "noctium"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "vox",
+   "ask_gr": "(Γ1α)",
+   "answers": [
+    "vocum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "sede",
+   "ask_gr": "(Γ1α)",
+   "answers": [
+    "sedum"
+   ],
+   "note": "sedes is an exception to -ium (S1 §26,4A)"
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "lacrimae",
+   "ask_gr": "την ίδια πτώση στον άλλο αριθμό",
+   "answers": [
+    "lacrima"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "diu",
+   "ask_gr": "τους άλλους δύο βαθμούς του επιρρήματος",
+   "answers": [
+    "diutius",
+    "diutissime"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "siccis",
+   "ask_gr": "την ίδια πτώση του θηλυκού γένους στον άλλο αριθμό",
+   "answers": [
+    "sicca"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "eius",
+   "ask_gr": "την αιτιατική πληθυντικού αριθμού στο ουδέτερο γένος",
+   "answers": [
+    "ea"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "ingentem(que)",
+   "ask_gr": "τους άλλους δύο βαθμούς του επιθέτου (στο ίδιο γένος, αριθμό και πτώση)",
+   "answers": [
+    "ingentiorem",
+    "ingentissimam"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "Hoc dictum",
+   "ask_gr": "την ίδια πτώση στον άλλο αριθμό",
+   "answers": [
+    "haec dicta"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "res ipsa",
+   "ask_gr": "τη γενική πτώση στον ίδιο αριθμό",
+   "answers": [
+    "rei ipsius"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "orabat",
+   "ask_gr": "(Γ2α) 4 ρήματα σε οριστική → γ΄ πληθ. οριστικής μέλλοντα ίδια φωνή",
+   "answers": [
+    "orabunt"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "impetravit",
+   "ask_gr": "(Γ2α)",
+   "answers": [
+    "impetrabunt"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "conduxit",
+   "ask_gr": "(Γ2α)",
+   "answers": [
+    "conducent"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "secūta est",
+   "ask_gr": "(Γ2α)",
+   "answers": [
+    "sequentur"
+   ],
+   "note": "deponent"
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "vincerent",
+   "ask_gr": "το β΄ ενικό πρόσωπο της οριστικής του παρακειμένου στην ίδια φωνή",
+   "answers": [
+    "vicisti"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "egrediebātur",
+   "ask_gr": "το απαρέμφατο του ενεστώτα",
+   "answers": [
+    "egredi"
+   ],
+   "note": "deponent"
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "redībat",
+   "ask_gr": "τη μετοχή του ενεστώτα στη γενική ενικού στο ίδιο γένος",
+   "answers": [
+    "redeuntis"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "moverat",
+   "ask_gr": "την αφαιρετική στο σουπίνο",
+   "answers": [
+    "motu"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "fuerat",
+   "ask_gr": "τον ίδιο τύπο στην υποτακτική",
+   "answers": [
+    "fuisset"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "Erat ascensūrus",
+   "ask_gr": "το γ΄ πληθυντικό πρόσωπο της υποτακτικής του παρακειμένου",
+   "answers": [
+    "ascensuri fuerint"
+   ],
+   "note": "published key misprints ascencuri"
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "petit",
+   "ask_gr": "τη γενική και την αφαιρετική του γερουνδίου",
+   "answers": [
+    "petendi",
+    "petendo"
+   ],
+   "note": "published key misprints pentendo"
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "fēcit",
+   "ask_gr": "το β΄ ενικό πρόσωπο της προστακτικής του ενεστώτα και του μέλλοντα στην ίδια φωνή",
+   "answers": [
+    "fac",
+    "facito"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ",
+   "form": "dixit",
+   "ask_gr": "το β΄ πληθυντικό πρόσωπο της οριστικής του ενεστώτα στην άλλη φωνή",
+   "answers": [
+    "dicimini"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "nobilissimi generis",
+   "ask_gr": "την αιτιατική πτώση στον άλλο αριθμό",
+   "answers": [
+    "nobilissima genera"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "clari",
+   "ask_gr": "τους άλλους δύο βαθμούς του επιθέτου στο ίδιο γένος, αριθμό και πτώση",
+   "answers": [
+    "clariores",
+    "clarissimi"
+   ],
+   "note": "assumes nominative plural masculine in the passage (clari = nom. pl. or gen. sg.)"
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "quidam",
+   "ask_gr": "τη γενική πτώση στο ίδιο γένος, στον άλλο αριθμό",
+   "answers": [
+    "cuiusdam"
+   ],
+   "note": "context-dependent: sg./pl. share the form quidam (m. nom.)"
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "viri",
+   "ask_gr": "την αιτιατική πτώση στον ίδιο αριθμό",
+   "answers": [
+    "viros"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "urbe",
+   "ask_gr": "τη γενική πτώση στον άλλο αριθμό",
+   "answers": [
+    "urbium"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "carcere",
+   "ask_gr": "την κλητική πτώση στον ίδιο αριθμό",
+   "answers": [
+    "carcer"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "spem",
+   "ask_gr": "την αφαιρετική πτώση στον ίδιο αριθμό",
+   "answers": [
+    "spe"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "sententiis",
+   "ask_gr": "την αιτιατική πτώση στον άλλο αριθμό",
+   "answers": [
+    "sententiam"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "multi",
+   "ask_gr": "τους τρεις βαθμούς του επιρρήματος",
+   "answers": [
+    "multum",
+    "plus",
+    "plurimum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "id",
+   "ask_gr": "τη γενική πτώση στο θηλυκό γένος, στον άλλο αριθμό",
+   "answers": [
+    "earum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "coniuratiōnem",
+   "ask_gr": "την ονομαστική πτώση στον ίδιο αριθμό",
+   "answers": [
+    "coniuratio"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "coniurāvit",
+   "ask_gr": "το α΄ ενικό πρόσωπο της υποτακτικής του ενεστώτα στην ίδια φωνή",
+   "answers": [
+    "coniurem"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "consecūti erant",
+   "ask_gr": "το γ΄ πληθυντικό πρόσωπο της οριστικής του ενεστώτα",
+   "answers": [
+    "consequuntur"
+   ],
+   "note": "deponent"
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "expulsus est",
+   "ask_gr": "το β΄ ενικό πρόσωπο της οριστικής του παρατατικού στην άλλη φωνή",
+   "answers": [
+    "expellebas"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "deprehensi sunt",
+   "ask_gr": "τη γενική του γερουνδίου",
+   "answers": [
+    "deprehendendi"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "aluērunt",
+   "ask_gr": "το α΄ πληθυντικό πρόσωπο της υποτακτικής του υπερσυντελίκου στην ίδια φωνή",
+   "answers": [
+    "aluissemus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "nascentem",
+   "ask_gr": "τη μετοχή του μέλλοντα στο ίδιο γένος, αριθμό και πτώση",
+   "answers": [
+    "nascituram"
+   ],
+   "note": "key; nasciturum if masculine"
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "dicerent",
+   "ask_gr": "το β΄ ενικό πρόσωπο της προστακτικής του ενεστώτα στην ίδια φωνή",
+   "answers": [
+    "dic"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "intellego",
+   "ask_gr": "την αφαιρετική στο σουπίνο",
+   "answers": [
+    "intellectu"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2024,
+   "session": "main",
+   "part": "Γ",
+   "form": "fore",
+   "ask_gr": "το απαρέμφατο του ενεστώτα",
+   "answers": [
+    "esse"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "diēbus",
+   "ask_gr": "τη δοτική πτώση στον άλλο αριθμό",
+   "answers": [
+    "diei"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "aperte",
+   "ask_gr": "τους άλλους δύο βαθμούς του επιρρήματος",
+   "answers": [
+    "apertius",
+    "apertissime"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "vocem tuam",
+   "ask_gr": "τη γενική πτώση στον άλλο αριθμό",
+   "answers": [
+    "vocum tuarum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "impudens",
+   "ask_gr": "την αφαιρετική πτώση στο ίδιο γένος, στον ίδιο αριθμό",
+   "answers": [
+    "impudenti"
+   ],
+   "note": "impudente also defensible for adjective used as noun; S1: -i"
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "mihi ipsi",
+   "ask_gr": "την ονομαστική πτώση στον ίδιο αριθμό",
+   "answers": [
+    "ego ipse"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "ebore",
+   "ask_gr": "την κλητική πτώση στον ίδιο αριθμό",
+   "answers": [
+    "ebur"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "simulacra",
+   "ask_gr": "την αιτιατική πτώση στον άλλο αριθμό",
+   "answers": [
+    "simulacrum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "viliōrem",
+   "ask_gr": "τους άλλους δύο βαθμούς του επιθέτου στο ίδιο γένος, στον ίδιο αριθμό και στην ίδια πτώση",
+   "answers": [
+    "vilem",
+    "vilissimam"
+   ],
+   "note": "key gives the feminine vilissimam (the passage noun is feminine); acc. sg. masc./fem. vilem is the positive"
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "tale",
+   "ask_gr": "την αιτιατική πτώση στο ίδιο γένος, στον άλλο αριθμό",
+   "answers": [
+    "talia"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "optimum",
+   "ask_gr": "τον συγκριτικό βαθμό του επιρρήματος",
+   "answers": [
+    "melius"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "Eōdem",
+   "ask_gr": "τη γενική πτώση στο ίδιο γένος, στον άλλο αριθμό",
+   "answers": [
+    "eorundem"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "indignātus / mentiebātur / utitur",
+   "ask_gr": "(Γ2α) τρεις τύπους αποθετικών ρημάτων",
+   "answers": [
+    "indignatus, mentiebatur, utitur"
+   ],
+   "note": "deponents"
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "indignātus",
+   "ask_gr": "μετοχή ενεστώτα ονομαστική ενικού θηλυκό",
+   "answers": [
+    "indignans"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "mentiebātur",
+   "ask_gr": "μετοχή ενεστώτα, ονομαστική ενικού, θηλυκό",
+   "answers": [
+    "mentiens"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "utitur",
+   "ask_gr": "μετοχή ενεστώτα, ονομαστική ενικού, θηλυκό",
+   "answers": [
+    "utens"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "Accipe",
+   "ask_gr": "την αφαιρετική στο σουπίνο",
+   "answers": [
+    "acceptu"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "fecerit",
+   "ask_gr": "το β΄ ενικό πρόσωπο της προστακτικής του ενεστώτα, στην ίδια φωνή",
+   "answers": [
+    "fac"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "venisset",
+   "ask_gr": "τη δοτική του γερουνδίου",
+   "answers": [
+    "veniendo"
+   ],
+   "note": "one published key prints veniendi: wrong"
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "exclamāvit",
+   "ask_gr": "το α΄ πληθυντικό πρόσωπο της υποτακτικής του ενεστώτα, στην ίδια φωνή",
+   "answers": [
+    "exclamemus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "credis",
+   "ask_gr": "τη μετοχή του παρακειμένου στην ονομαστική ενικού, στο ουδέτερο γένος",
+   "answers": [
+    "creditum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "agunt",
+   "ask_gr": "το β΄ ενικό πρόσωπο της οριστικής του ενεστώτα στην ενεργητική περιφραστική συζυγία, στο αρσενικό γένος",
+   "answers": [
+    "acturus es"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "putas",
+   "ask_gr": "το απαρέμφατο του ενεστώτα στην παθητική φωνή",
+   "answers": [
+    "putari"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "sciēbat",
+   "ask_gr": "το απαρέμφατο του παρακειμένου στην ίδια φωνή",
+   "answers": [
+    "scivisse",
+    "scisse"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2025,
+   "session": "main",
+   "part": "Γ",
+   "form": "posset",
+   "ask_gr": "το γ΄ ενικό πρόσωπο της υποτακτικής του ενεστώτα",
+   "answers": [
+    "possit"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "senātum",
+   "ask_gr": "τη γενική πτώση, στον ίδιο αριθμό",
+   "answers": [
+    "senatus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "rus",
+   "ask_gr": "την αιτιατική πτώση, στον άλλο αριθμό",
+   "answers": [
+    "rura"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "id",
+   "ask_gr": "τη γενική πτώση, στο θηλυκό γένος, στον άλλο αριθμό",
+   "answers": [
+    "earum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "dotem",
+   "ask_gr": "τη γενική πτώση, στον άλλο αριθμό",
+   "answers": [
+    "dotium"
+   ],
+   "note": "i-stem exception (S1 §26,4Bβ)"
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "illis",
+   "ask_gr": "την ονομαστική πτώση, στο ουδέτερο γένος, στον ίδιο αριθμό",
+   "answers": [
+    "illa"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "Aequum",
+   "ask_gr": "τους άλλους δύο βαθμούς του επιθέτου, στο ίδιο γένος, στον ίδιο αριθμό και στην ίδια πτώση",
+   "answers": [
+    "aequius",
+    "aequissimum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "populum",
+   "ask_gr": "την κλητική πτώση, στον ίδιο αριθμό",
+   "answers": [
+    "popule"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "viri",
+   "ask_gr": "τη γενική πτώση, στον άλλο αριθμό",
+   "answers": [
+    "virorum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "cultellum tonsorium",
+   "ask_gr": "την αφαιρετική πτώση, στον ίδιο αριθμό",
+   "answers": [
+    "cultello tonsorio"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "ancillārum",
+   "ask_gr": "τη δοτική πτώση, στον άλλο αριθμό",
+   "answers": [
+    "ancillae"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "certissimum",
+   "ask_gr": "τον θετικό βαθμό του επιρρήματος",
+   "answers": [
+    "certe"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "tale consilium",
+   "ask_gr": "την ονομαστική πτώση, στον άλλο αριθμό",
+   "answers": [
+    "talia consilia"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "elapso",
+   "ask_gr": "(Γ2α) τη μετοχή → απαρέμφατο ενεστώτα στην ίδια φωνή",
+   "answers": [
+    "elabi"
+   ],
+   "note": "deponent"
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "vocatus",
+   "ask_gr": "(Γ2α)",
+   "answers": [
+    "vocari"
+   ],
+   "note": "passive of voco"
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "molientem",
+   "ask_gr": "(Γ2α)",
+   "answers": [
+    "moliri"
+   ],
+   "note": "deponent"
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "scripsit",
+   "ask_gr": "τη γενική του γερουνδίου",
+   "answers": [
+    "scribendi"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "discessisse",
+   "ask_gr": "το α΄ πληθυντικό πρόσωπο της υποτακτικής του ενεστώτα, στην ίδια φωνή",
+   "answers": [
+    "discedamus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "aberat",
+   "ask_gr": "τη μετοχή του ενεστώτα, στην ονομαστική ενικού, στο αρσενικό γένος",
+   "answers": [
+    "absens"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "accepērunt",
+   "ask_gr": "την αιτιατική στο σουπίνο",
+   "answers": [
+    "acceptum"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "conferre",
+   "ask_gr": "το β΄ ενικό πρόσωπο της προστακτικής του μέλλοντα, στην ίδια φωνή",
+   "answers": [
+    "conferto"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "exigeret",
+   "ask_gr": "το α΄ πληθυντικό πρόσωπο της οριστικής του παρακειμένου, στην ίδια φωνή",
+   "answers": [
+    "exegimus"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "interficiendo",
+   "ask_gr": "το γ΄ ενικό πρόσωπο της οριστικής του μέλλοντα, στην ενεργητική φωνή",
+   "answers": [
+    "interficiet"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "vulnerāvit",
+   "ask_gr": "το β΄ πληθυντικό πρόσωπο της οριστικής του παρατατικού, στην ίδια φωνή",
+   "answers": [
+    "vulnerabatis"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2026,
+   "session": "main",
+   "part": "Γ",
+   "form": "vēnit",
+   "ask_gr": "το γ΄ πληθυντικό πρόσωπο της υποτακτικής του υπερσυντελίκου",
+   "answers": [
+    "venissent"
+   ],
+   "note": ""
+  },
+  {
+   "year": 2023,
+   "session": "main",
+   "part": "Γ1α",
+   "form": "sorōris",
+   "ask_gr": "(Γ1α) τέσσερα ουσιαστικά γ΄ κλίσης στη γενική πληθυντικού",
+   "answers": [
+    "sororum"
+   ],
+   "note": "printed key reads \"sonori - sonorum\": evident typo for sororis - sororum (passage has sorōris)"
+  }
+ ]
+}

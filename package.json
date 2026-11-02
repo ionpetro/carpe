@@ -1,0 +1,13 @@
+{
+  "name": "carpe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Carpe: playful Latin for the Panhellenic exams (Λατινικά Γ' Λυκείου).",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test \"app/test/*.test.js\"",
+    "validate": "node app/tools/validate.js",
+    "build": "node app/build.mjs"
+  }
+}

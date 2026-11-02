@@ -1,0 +1,1912 @@
+[
+{
+"lesson": 16,
+"latin_raw": "gladius",
+"starred": false,
+"text": "το ξίφος––γλαδιόλα (λουλούδι)",
+"meaning_el": "το ξίφος",
+"derivatives_el": "γλαδιόλα (λουλούδι)",
+"sup": null,
+"latin": "gladius"
+},
+{
+"lesson": 16,
+"latin_raw": "princeps",
+"starred": true,
+"text": "ο ηγεμόνας––πρίγκιπας, πριγκιπάτο",
+"meaning_el": "ο ηγεμόνας",
+"derivatives_el": "πρίγκιπας, πριγκιπάτο",
+"sup": null,
+"latin": "princeps"
+},
+{
+"lesson": 16,
+"latin_raw": "signum",
+"starred": false,
+"text": "η σημαία, το σημείο––σινιάλο",
+"meaning_el": "η σημαία, το σημείο",
+"derivatives_el": "σινιάλο",
+"sup": null,
+"latin": "signum"
+},
+{
+"lesson": 16,
+"latin_raw": "militaris",
+"starred": false,
+"text": "στρατιωτικός––μιλιταρισμός",
+"meaning_el": "στρατιωτικός",
+"derivatives_el": "μιλιταρισμός",
+"sup": null,
+"latin": "militaris"
+},
+{
+"lesson": 16,
+"latin_raw": "numerus",
+"starred": false,
+"text": "ο αριθμός, το νούμερο––νούμερο",
+"meaning_el": "ο αριθμός, το νούμερο",
+"derivatives_el": "νούμερο",
+"sup": null,
+"latin": "numerus"
+},
+{
+"lesson": 16,
+"latin_raw": "arma",
+"starred": false,
+"text": "τα όπλα–– τα άρματα, ο αρματολός",
+"meaning_el": "τα όπλα",
+"derivatives_el": "τα άρματα, ο αρματολός",
+"sup": null,
+"latin": "arma"
+},
+{
+"lesson": 16,
+"latin_raw": "dux",
+"starred": true,
+"text": "αρχηγός––δούκας, δουκάτο",
+"meaning_el": "αρχηγός",
+"derivatives_el": "δούκας, δουκάτο",
+"sup": null,
+"latin": "dux"
+},
+{
+"lesson": 16,
+"latin_raw": "mitto (σουπίνο missum)",
+"starred": true,
+"text": "στέλνω––κομισάριος (επίτροπος), μισιονάριος (ιεραπόστολος καθολικής εκκλησίας)",
+"meaning_el": "στέλνω",
+"derivatives_el": "κομισάριος (επίτροπος), μισιονάριος (ιεραπόστολος καθολικής εκκλησίας)",
+"sup": "missum",
+"latin": "mitto"
+},
+{
+"lesson": 16,
+"latin_raw": "verto",
+"starred": true,
+"text": "στρέφω––η βερσιόν (εκδοχή, παραλλαγή), βέρτιγκο (ίλιγγος, αίσθημα περιστροφής)",
+"meaning_el": "στρέφω",
+"derivatives_el": "η βερσιόν (εκδοχή, παραλλαγή), βέρτιγκο (ίλιγγος, αίσθημα περιστροφής)",
+"sup": null,
+"latin": "verto"
+},
+{
+"lesson": 16,
+"latin_raw": "curro",
+"starred": true,
+"text": "τρέχω–– η κούρσα (αγώνας ταχύτητας, το τρέξιμο), ο κούριερ (ο ταχυδιανομέας)",
+"meaning_el": "τρέχω",
+"derivatives_el": "η κούρσα (αγώνας ταχύτητας, το τρέξιμο), ο κούριερ (ο ταχυδιανομέας)",
+"sup": null,
+"latin": "curro"
+},
+{
+"lesson": 17,
+"latin_raw": "tabernaculum",
+"starred": false,
+"text": "η σκηνή––ταβέρνα",
+"meaning_el": "η σκηνή",
+"derivatives_el": "ταβέρνα",
+"sup": null,
+"latin": "tabernaculum"
+},
+{
+"lesson": 17,
+"latin_raw": "communis",
+"starred": false,
+"text": "κοινός––κομμουνισμός",
+"meaning_el": "κοινός",
+"derivatives_el": "κομμουνισμός",
+"sup": null,
+"latin": "communis"
+},
+{
+"lesson": 17,
+"latin_raw": "miseror",
+"starred": true,
+"text": "θρηνώ, λυπάμαι κάποιον––μιζέρια/μίζερος",
+"meaning_el": "θρηνώ, λυπάμαι κάποιον",
+"derivatives_el": "μιζέρια/μίζερος",
+"sup": null,
+"latin": "miseror"
+},
+{
+"lesson": 17,
+"latin_raw": "mercator",
+"starred": true,
+"text": "ο έμπορος––ο μερκαντιλισμός (εμποροκρατία, οικονομικό σύστημα)",
+"meaning_el": "ο έμπορος",
+"derivatives_el": "ο μερκαντιλισμός (εμποροκρατία, οικονομικό σύστημα)",
+"sup": null,
+"latin": "mercator"
+},
+{
+"lesson": 17,
+"latin_raw": "virtus",
+"starred": true,
+"text": "αρετή, χάρισμα––βιρτουόζος (δεξιοτέχνης)",
+"meaning_el": "αρετή, χάρισμα",
+"derivatives_el": "βιρτουόζος (δεξιοτέχνης)",
+"sup": null,
+"latin": "virtus"
+},
+{
+"lesson": 18,
+"latin_raw": "pastor",
+"starred": false,
+"text": "ο ποιμένας, ο βοσκός––πάστορας (προτεστάντης ιερέας)",
+"meaning_el": "ο ποιμένας, ο βοσκός",
+"derivatives_el": "πάστορας (προτεστάντης ιερέας)",
+"sup": null,
+"latin": "pastor"
+},
+{
+"lesson": 18,
+"latin_raw": "(ex)traho",
+"starred": false,
+"text": "τραβάω (έξω)––τρακτέρ",
+"meaning_el": "τραβάω (έξω)",
+"derivatives_el": "τρακτέρ",
+"sup": null,
+"latin": "extraho"
+},
+{
+"lesson": 18,
+"latin_raw": "confundo (σουπίνο",
+"starred": true,
+"text": "confusum): συγχέω––το κομφούζιο (μπερδεμένη κατάσταση)",
+"meaning_el": "confusum): συγχέω",
+"derivatives_el": "το κομφούζιο (μπερδεμένη κατάσταση)",
+"sup": null,
+"latin": "confundo σουπίνο"
+},
+{
+"lesson": 19,
+"latin_raw": "pravus",
+"starred": false,
+"text": "διεστραμμένος––μπράβος",
+"meaning_el": "διεστραμμένος",
+"derivatives_el": "μπράβος",
+"sup": null,
+"latin": "pravus"
+},
+{
+"lesson": 19,
+"latin_raw": "socius",
+"starred": false,
+"text": "σύντροφος––σοσιαλισμός",
+"meaning_el": "σύντροφος",
+"derivatives_el": "σοσιαλισμός",
+"sup": null,
+"latin": "socius"
+},
+{
+"lesson": 19,
+"latin_raw": "pugna",
+"starred": true,
+"text": "μάχη––μπουνιά",
+"meaning_el": "μάχη",
+"derivatives_el": "μπουνιά",
+"sup": null,
+"latin": "pugna"
+},
+{
+"lesson": 20,
+"latin_raw": "cado",
+"starred": false,
+"text": "πέφτω––(το) κάζο (ζημιά, πάθημα, στραπάτσο)",
+"meaning_el": "πέφτω",
+"derivatives_el": "(το) κάζο (ζημιά, πάθημα, στραπάτσο)",
+"sup": null,
+"latin": "cado"
+},
+{
+"lesson": 20,
+"latin_raw": "diaeta",
+"starred": false,
+"text": "(θερινή) κατοικία––δίαιτα",
+"meaning_el": "(θερινή) κατοικία",
+"derivatives_el": "δίαιτα",
+"sup": null,
+"latin": "diaeta"
+},
+{
+"lesson": 20,
+"latin_raw": "solarium",
+"starred": false,
+"text": "λιακωτό––(το) σολάριουμ (συσκευή με την οποία υποβάλλεται κανείς σε τεχνητό μαύρισμα)",
+"meaning_el": "λιακωτό",
+"derivatives_el": "(το) σολάριουμ (συσκευή με την οποία υποβάλλεται κανείς σε τεχνητό μαύρισμα)",
+"sup": null,
+"latin": "solarium"
+},
+{
+"lesson": 20,
+"latin_raw": "velum",
+"starred": false,
+"text": "κουρτίνα––(το) βέλο (λεπτό ύφασμα που καλύπτει γυναικεία καπέλα ή και μέρος του προσώπου), το βήλο (κομμάτι πανί)",
+"meaning_el": "κουρτίνα",
+"derivatives_el": "(το) βέλο (λεπτό ύφασμα που καλύπτει γυναικεία καπέλα ή και μέρος του προσώπου), το βήλο (κομμάτι πανί)",
+"sup": null,
+"latin": "velum"
+},
+{
+"lesson": 20,
+"latin_raw": "(dis)curro",
+"starred": true,
+"text": "τρέχω (εδώ κι εκεί)––η κούρσα (αγώνας ταχύτητας, το τρέξιμο), ο κούριερ (ο ταχυδιανομέας)",
+"meaning_el": "τρέχω (εδώ κι εκεί)",
+"derivatives_el": "η κούρσα (αγώνας ταχύτητας, το τρέξιμο), ο κούριερ (ο ταχυδιανομέας)",
+"sup": null,
+"latin": "discurro"
+},
+{
+"lesson": 21,
+"latin_raw": "dux",
+"starred": true,
+"text": "αρχηγός––δούκας",
+"meaning_el": "αρχηγός",
+"derivatives_el": "δούκας",
+"sup": null,
+"latin": "dux"
+},
+{
+"lesson": 21,
+"latin_raw": "dictator",
+"starred": true,
+"text": "αρχιστράτηγος με έκτακτες εξουσίες για περιορισμένο διάστημα––δικτάτορας (πρόσωπο που κατέλαβε την εξουσία με βίαιο τρόπο)",
+"meaning_el": "αρχιστράτηγος με έκτακτες εξουσίες για περιορισμένο διάστημα",
+"derivatives_el": "δικτάτορας (πρόσωπο που κατέλαβε την εξουσία με βίαιο τρόπο)",
+"sup": null,
+"latin": "dictator"
+},
+{
+"lesson": 22,
+"latin_raw": "numerus",
+"starred": false,
+"text": "ο αριθμός––νούμερο",
+"meaning_el": "ο αριθμός",
+"derivatives_el": "νούμερο",
+"sup": null,
+"latin": "numerus"
+},
+{
+"lesson": 22,
+"latin_raw": "fructus",
+"starred": false,
+"text": "ο καρπός––φρούτο",
+"meaning_el": "ο καρπός",
+"derivatives_el": "φρούτο",
+"sup": null,
+"latin": "fructus"
+},
+{
+"lesson": 22,
+"latin_raw": "res publica",
+"starred": true,
+"text": "η πολιτεία, η δημοκρατία––ρεπουμπλικάνοι (πολιτικό κόμμα των ΗΠΑ)",
+"meaning_el": "η πολιτεία, η δημοκρατία",
+"derivatives_el": "ρεπουμπλικάνοι (πολιτικό κόμμα των ΗΠΑ)",
+"sup": null,
+"latin": "res publica"
+},
+{
+"lesson": 22,
+"latin_raw": "servio",
+"starred": true,
+"text": "υπηρετώ ––σερβιτόρος, σερβίρω",
+"meaning_el": "υπηρετώ",
+"derivatives_el": "σερβιτόρος, σερβίρω",
+"sup": null,
+"latin": "servio"
+},
+{
+"lesson": 22,
+"latin_raw": "motus",
+"starred": true,
+"text": "η κίνηση––το μοτίβο (ρυθμική μουσική ιδέα, επαναλαμβανόμενο εικαστικό ή λογοτεχνικό θέμα), το μοτέρ (η μηχανή), το μοτοποδήλατο, η μοτοσικλέτα κ.ο.κ.",
+"meaning_el": "η κίνηση",
+"derivatives_el": "το μοτίβο (ρυθμική μουσική ιδέα, επαναλαμβανόμενο εικαστικό ή λογοτεχνικό θέμα), το μοτέρ (η μηχανή), το μοτοποδήλατο, η μοτοσικλέτα κ.ο.κ.",
+"sup": null,
+"latin": "motus"
+},
+{
+"lesson": 23,
+"latin_raw": "siccus",
+"starred": false,
+"text": "στεγνός, ξηρός––σέκος (ξερός, άναυδος, στον τόπο=νεκρός)",
+"meaning_el": "στεγνός, ξηρός",
+"derivatives_el": "σέκος (ξερός, άναυδος, στον τόπο=νεκρός)",
+"sup": null,
+"latin": "siccus"
+},
+{
+"lesson": 23,
+"latin_raw": "ascendo",
+"starred": false,
+"text": "ανεβαίνω––ασανσέρ",
+"meaning_el": "ανεβαίνω",
+"derivatives_el": "ασανσέρ",
+"sup": null,
+"latin": "ascendo"
+},
+{
+"lesson": 23,
+"latin_raw": "arma",
+"starred": false,
+"text": "όπλα––άρματα, αρματολός (υπάρχει στα σχόλια του μαθ. 16)",
+"meaning_el": "όπλα",
+"derivatives_el": "άρματα, αρματολός (υπάρχει στα σχόλια του μαθ. 16)",
+"sup": null,
+"latin": "arma"
+},
+{
+"lesson": 23,
+"latin_raw": "piscatorius",
+"starred": false,
+"text": "ψαράδικος––πισίνα",
+"meaning_el": "ψαράδικος",
+"derivatives_el": "πισίνα",
+"sup": null,
+"latin": "piscatorius"
+},
+{
+"lesson": 23,
+"latin_raw": "ianua",
+"starred": false,
+"text": "πόρτα––Ιανουάριος",
+"meaning_el": "πόρτα",
+"derivatives_el": "Ιανουάριος",
+"sup": null,
+"latin": "ianua"
+},
+{
+"lesson": 23,
+"latin_raw": "vinco",
+"starred": true,
+"text": "νικώ––Βίκτωρ, Βικτωρία (κύρια ονόματα)",
+"meaning_el": "νικώ",
+"derivatives_el": "Βίκτωρ, Βικτωρία (κύρια ονόματα)",
+"sup": null,
+"latin": "vinco"
+},
+{
+"lesson": 23,
+"latin_raw": "oculus",
+"starred": true,
+"text": "μάτι––τα κιάλια",
+"meaning_el": "μάτι",
+"derivatives_el": "τα κιάλια",
+"sup": null,
+"latin": "oculus"
+},
+{
+"lesson": 23,
+"latin_raw": "bene",
+"starred": true,
+"text": "καλά––το μπόνους, η μπουνάτσα (η καλοκαιρία)",
+"meaning_el": "καλά",
+"derivatives_el": "το μπόνους, η μπουνάτσα (η καλοκαιρία)",
+"sup": null,
+"latin": "bene"
+},
+{
+"lesson": 23,
+"latin_raw": "pars",
+"starred": true,
+"text": "το μέρος––η πάρτη (ο εαυτός μου, τα προσωπικά μου συμφέροντα), το πάρτι, η παρτίδα, η παρτιτούρα",
+"meaning_el": "το μέρος",
+"derivatives_el": "η πάρτη (ο εαυτός μου, τα προσωπικά μου συμφέροντα), το πάρτι, η παρτίδα, η παρτιτούρα",
+"sup": null,
+"latin": "pars"
+},
+{
+"lesson": 25,
+"latin_raw": "arbor",
+"starred": false,
+"text": "δέντρο––το άλμπουρο (το κατάρτι)",
+"meaning_el": "δέντρο",
+"derivatives_el": "το άλμπουρο (το κατάρτι)",
+"sup": null,
+"latin": "arbor"
+},
+{
+"lesson": 25,
+"latin_raw": "muri",
+"starred": false,
+"text": "τα τείχη––το μουράγιο (προκυμαία, χτιστό τμήμα λιμανιού)",
+"meaning_el": "τα τείχη",
+"derivatives_el": "το μουράγιο (προκυμαία, χτιστό τμήμα λιμανιού)",
+"sup": null,
+"latin": "muri"
+},
+{
+"lesson": 25,
+"latin_raw": "extremus",
+"starred": false,
+"text": "έσχατος––εξτρεμισμός",
+"meaning_el": "έσχατος",
+"derivatives_el": "εξτρεμισμός",
+"sup": null,
+"latin": "extremus"
+},
+{
+"lesson": 26,
+"latin_raw": "minor",
+"starred": false,
+"text": "μικρότερος––μίνι, μινόρε",
+"meaning_el": "μικρότερος",
+"derivatives_el": "μίνι, μινόρε",
+"sup": null,
+"latin": "minor"
+},
+{
+"lesson": 26,
+"latin_raw": "festivus",
+"starred": false,
+"text": "πρόσχαρος––φεστιβάλ",
+"meaning_el": "πρόσχαρος",
+"derivatives_el": "φεστιβάλ",
+"sup": null,
+"latin": "festivus"
+},
+{
+"lesson": 26,
+"latin_raw": "constantia",
+"starred": false,
+"text": "σταθερότητα––Κωνσταντίνος",
+"meaning_el": "σταθερότητα",
+"derivatives_el": "Κωνσταντίνος",
+"sup": null,
+"latin": "constantia"
+},
+{
+"lesson": 26,
+"latin_raw": "patientia",
+"starred": false,
+"text": "υπομονή––πασιέντσα",
+"meaning_el": "υπομονή",
+"derivatives_el": "πασιέντσα",
+"sup": null,
+"latin": "patientia"
+},
+{
+"lesson": 26,
+"latin_raw": "studiose",
+"starred": true,
+"text": "με επιμέλεια––στούντιο",
+"meaning_el": "με επιμέλεια",
+"derivatives_el": "στούντιο",
+"sup": null,
+"latin": "studiose"
+},
+{
+"lesson": 26,
+"latin_raw": "vita",
+"starred": true,
+"text": "ζωή––η βιταμίνη",
+"meaning_el": "ζωή",
+"derivatives_el": "η βιταμίνη",
+"sup": null,
+"latin": "vita"
+},
+{
+"lesson": 27,
+"latin_raw": "minor",
+"starred": false,
+"text": "μικρότερος––μίνι, μινόρε (υπάρχει στα ετυμολογικά του μαθ. 26)",
+"meaning_el": "μικρότερος",
+"derivatives_el": "μίνι, μινόρε (υπάρχει στα ετυμολογικά του μαθ. 26)",
+"sup": null,
+"latin": "minor"
+},
+{
+"lesson": 27,
+"latin_raw": "sonorus",
+"starred": false,
+"text": "ηχηρός––σονάτα (είδος μουσικής σύνθεσης), σονέτο (λυρικό ποίημα)",
+"meaning_el": "ηχηρός",
+"derivatives_el": "σονάτα (είδος μουσικής σύνθεσης), σονέτο (λυρικό ποίημα)",
+"sup": null,
+"latin": "sonorus"
+},
+{
+"lesson": 27,
+"latin_raw": "durus",
+"starred": false,
+"text": "σκληρός––ντούρος (σκληρός, αυτός που δε λυγίζει εύκολα)",
+"meaning_el": "σκληρός",
+"derivatives_el": "ντούρος (σκληρός, αυτός που δε λυγίζει εύκολα)",
+"sup": null,
+"latin": "durus"
+},
+{
+"lesson": 27,
+"latin_raw": "pomum",
+"starred": false,
+"text": "καρπός––πόμολο",
+"meaning_el": "καρπός",
+"derivatives_el": "πόμολο",
+"sup": null,
+"latin": "pomum"
+},
+{
+"lesson": 28,
+"latin_raw": "notus",
+"starred": false,
+"text": "γνωστός––η νότα",
+"meaning_el": "γνωστός",
+"derivatives_el": "η νότα",
+"sup": null,
+"latin": "notus"
+},
+{
+"lesson": 28,
+"latin_raw": "custodia",
+"starred": false,
+"text": "φρουρά, φυλακή––κουστωδία (επίσημη συνοδεία αστυνομικών ή στρατιωτικών)",
+"meaning_el": "φρουρά, φυλακή",
+"derivatives_el": "κουστωδία (επίσημη συνοδεία αστυνομικών ή στρατιωτικών)",
+"sup": null,
+"latin": "custodia"
+},
+{
+"lesson": 28,
+"latin_raw": "homo",
+"starred": true,
+"text": "άνθρωπος––ουμανισμός (ανθρωπισμός)",
+"meaning_el": "άνθρωπος",
+"derivatives_el": "ουμανισμός (ανθρωπισμός)",
+"sup": null,
+"latin": "homo"
+},
+{
+"lesson": 28,
+"latin_raw": "servus",
+"starred": true,
+"text": "δούλος, υπηρέτης––σερβιτόρος, σερβίρω",
+"meaning_el": "δούλος, υπηρέτης",
+"derivatives_el": "σερβιτόρος, σερβίρω",
+"sup": null,
+"latin": "servus"
+},
+{
+"lesson": 28,
+"latin_raw": "summus",
+"starred": true,
+"text": "ύψιστος, ανώτατος, ολόκληρος––η σούμα (το σύνολο)",
+"meaning_el": "ύψιστος, ανώτατος, ολόκληρος",
+"derivatives_el": "η σούμα (το σύνολο)",
+"sup": null,
+"latin": "summus"
+},
+{
+"lesson": 29,
+"latin_raw": "homo",
+"starred": true,
+"text": "άνθρωπος––ουμανισμός (ανθρωπισμός)",
+"meaning_el": "άνθρωπος",
+"derivatives_el": "ουμανισμός (ανθρωπισμός)",
+"sup": null,
+"latin": "homo"
+},
+{
+"lesson": 29,
+"latin_raw": "instituo",
+"starred": false,
+"text": "διδάσκω––ινστιτούτο (μορφωτικό––πολιτιστικό ίδρυμα)",
+"meaning_el": "διδάσκω",
+"derivatives_el": "ινστιτούτο (μορφωτικό––πολιτιστικό ίδρυμα)",
+"sup": null,
+"latin": "instituo"
+},
+{
+"lesson": 29,
+"latin_raw": "milia/mille",
+"starred": false,
+"text": "χίλια, η χιλιάδα––(το) μίλι",
+"meaning_el": "χίλια, η χιλιάδα",
+"derivatives_el": "(το) μίλι",
+"sup": null,
+"latin": "milia/mille"
+},
+{
+"lesson": 29,
+"latin_raw": "sutor",
+"starred": false,
+"text": "παπουτσής (αυτός που ράβει υποδήματα––(κο)στούμι",
+"meaning_el": "παπουτσής (αυτός που ράβει υποδήματα",
+"derivatives_el": "(κο)στούμι",
+"sup": null,
+"latin": "sutor"
+},
+{
+"lesson": 29,
+"latin_raw": "opera",
+"starred": false,
+"text": "εργασία, κόπος––όπερα, οπερέτα (μουσικά είδη)",
+"meaning_el": "εργασία, κόπος",
+"derivatives_el": "όπερα, οπερέτα (μουσικά είδη)",
+"sup": null,
+"latin": "opera"
+},
+{
+"lesson": 29,
+"latin_raw": "doceo",
+"starred": false,
+"text": "διδάσκω––ντοκουμέντο",
+"meaning_el": "διδάσκω",
+"derivatives_el": "ντοκουμέντο",
+"sup": null,
+"latin": "doceo"
+},
+{
+"lesson": 30,
+"latin_raw": "luxuria",
+"starred": false,
+"text": "πολυτέλεια––το λούσο (εντυπωσιακό ρούχο ή είδος καλλωπισμού)",
+"meaning_el": "πολυτέλεια",
+"derivatives_el": "το λούσο (εντυπωσιακό ρούχο ή είδος καλλωπισμού)",
+"sup": null,
+"latin": "luxuria"
+},
+{
+"lesson": 30,
+"latin_raw": "familia",
+"starred": false,
+"text": "οικογένεια––φαμίλια",
+"meaning_el": "οικογένεια",
+"derivatives_el": "φαμίλια",
+"sup": null,
+"latin": "familia"
+},
+{
+"lesson": 30,
+"latin_raw": "honor/s",
+"starred": false,
+"text": "η τιμή––(το) ονόρε",
+"meaning_el": "η τιμή",
+"derivatives_el": "(το) ονόρε",
+"sup": null,
+"latin": "honor/s"
+},
+{
+"lesson": 30,
+"latin_raw": "res",
+"starred": true,
+"text": "πράγμα––ρεαλισμός",
+"meaning_el": "πράγμα",
+"derivatives_el": "ρεαλισμός",
+"sup": null,
+"latin": "res"
+},
+{
+"lesson": 31,
+"latin_raw": "congredior",
+"starred": false,
+"text": "συγκρούομαι, συγκεντρώνομαι, συνέρχομαι––κογκρέσο (συνέλευση)",
+"meaning_el": "συγκρούομαι, συγκεντρώνομαι, συνέρχομαι",
+"derivatives_el": "κογκρέσο (συνέλευση)",
+"sup": null,
+"latin": "congredior"
+},
+{
+"lesson": 31,
+"latin_raw": "castra",
+"starred": true,
+"text": "στρατόπεδο (castrum: φρούριο)––κάστρο",
+"meaning_el": "στρατόπεδο (castrum: φρούριο)",
+"derivatives_el": "κάστρο",
+"sup": null,
+"latin": "castra"
+},
+{
+"lesson": 31,
+"latin_raw": "opera (+ γενική)",
+"starred": false,
+"text": "με τις ενέργειες κάποιου––όπερα, οπερέτα (μουσικά είδη)",
+"meaning_el": "με τις ενέργειες κάποιου",
+"derivatives_el": "όπερα, οπερέτα (μουσικά είδη)",
+"sup": null,
+"latin": "opera"
+},
+{
+"lesson": 31,
+"latin_raw": "(per)moveo",
+"starred": true,
+"text": "(παρα)κινώ––το μοτίβο (ρυθμική μουσική ιδέα, επαναλαμβανόμενο εικαστικό ή λογοτεχνικό θέμα), το μοτέρ (η μηχανή), το μοτοποδήλατο, η μοτοσικλέτα κ.ο.κ.",
+"meaning_el": "(παρα)κινώ",
+"derivatives_el": "το μοτίβο (ρυθμική μουσική ιδέα, επαναλαμβανόμενο εικαστικό ή λογοτεχνικό θέμα), το μοτέρ (η μηχανή), το μοτοποδήλατο, η μοτοσικλέτα κ.ο.κ.",
+"sup": null,
+"latin": "permoveo"
+},
+{
+"lesson": 32,
+"latin_raw": "vetustas",
+"starred": false,
+"text": "αρχαιότητα––βετεράνος",
+"meaning_el": "αρχαιότητα",
+"derivatives_el": "βετεράνος",
+"sup": null,
+"latin": "vetustas"
+},
+{
+"lesson": 32,
+"latin_raw": "colo (colui - cultum - colere 3)",
+"starred": true,
+"text": "καλλιεργώ––κουλτούρα",
+"meaning_el": "καλλιεργώ",
+"derivatives_el": "κουλτούρα",
+"sup": null,
+"latin": "colo colui - cultum - colere 3"
+},
+{
+"lesson": 32,
+"latin_raw": "conformo",
+"starred": true,
+"text": "διαμορφώνω––κονφορμισμός ή κομφορμισμός (συμβατισμός)",
+"meaning_el": "διαμορφώνω",
+"derivatives_el": "κονφορμισμός ή κομφορμισμός (συμβατισμός)",
+"sup": null,
+"latin": "conformo"
+},
+{
+"lesson": 32,
+"latin_raw": "liber",
+"starred": true,
+"text": "το βιβλίο––το λιμπρέτο (το κείμενο όπερας ή άλλου μουσικού έργου)",
+"meaning_el": "το βιβλίο",
+"derivatives_el": "το λιμπρέτο (το κείμενο όπερας ή άλλου μουσικού έργου)",
+"sup": null,
+"latin": "liber"
+},
+{
+"lesson": 32,
+"latin_raw": "imitor",
+"starred": true,
+"text": "μιμούμαι––ιμιτασιόν (η απομίμηση - και ως επίθετο)",
+"meaning_el": "μιμούμαι",
+"derivatives_el": "ιμιτασιόν (η απομίμηση - και ως επίθετο)",
+"sup": null,
+"latin": "imitor"
+},
+{
+"lesson": 32,
+"latin_raw": "fortis",
+"starred": true,
+"text": "δυνατός, γενναίος––το φόρτε (το δυνατό σημείο κάποιου)",
+"meaning_el": "δυνατός, γενναίος",
+"derivatives_el": "το φόρτε (το δυνατό σημείο κάποιου)",
+"sup": null,
+"latin": "fortis"
+},
+{
+"lesson": 33,
+"latin_raw": "libido",
+"starred": true,
+"text": "πάθος––η λίμπιντο (η ερωτική ορμή)",
+"meaning_el": "πάθος",
+"derivatives_el": "η λίμπιντο (η ερωτική ορμή)",
+"sup": null,
+"latin": "libido"
+},
+{
+"lesson": 33,
+"latin_raw": "propago",
+"starred": false,
+"text": "αφήνω απογόνους––προπαγάνδα",
+"meaning_el": "αφήνω απογόνους",
+"derivatives_el": "προπαγάνδα",
+"sup": null,
+"latin": "propago"
+},
+{
+"lesson": 33,
+"latin_raw": "sano",
+"starred": false,
+"text": "θεραπεύω––το σανατόριο (θεραπευτικό ίδρυμα)",
+"meaning_el": "θεραπεύω",
+"derivatives_el": "το σανατόριο (θεραπευτικό ίδρυμα)",
+"sup": null,
+"latin": "sano"
+},
+{
+"lesson": 34,
+"latin_raw": "forte",
+"starred": false,
+"text": "τυχαία, ίσως/fortuna: τύχη––φουρτούνα",
+"meaning_el": "τυχαία, ίσως/fortuna: τύχη",
+"derivatives_el": "φουρτούνα",
+"sup": null,
+"latin": "forte"
+},
+{
+"lesson": 34,
+"latin_raw": "dux",
+"starred": true,
+"text": "αρχηγός––δούκας, δουκάτο",
+"meaning_el": "αρχηγός",
+"derivatives_el": "δούκας, δουκάτο",
+"sup": null,
+"latin": "dux"
+},
+{
+"lesson": 34,
+"latin_raw": "templum",
+"starred": true,
+"text": "το ιερό, ο ναός––το τέμπλο (το εικονοστάσιο μεταξύ αγίου βήματος και κυρίως ναού στις εκκλησίες)",
+"meaning_el": "το ιερό, ο ναός",
+"derivatives_el": "το τέμπλο (το εικονοστάσιο μεταξύ αγίου βήματος και κυρίως ναού στις εκκλησίες)",
+"sup": null,
+"latin": "templum"
+},
+{
+"lesson": 35,
+"latin_raw": "miseror",
+"starred": true,
+"text": "θρηνώ, λυπάμαι κάποιον––μιζέρια/μίζερος",
+"meaning_el": "θρηνώ, λυπάμαι κάποιον",
+"derivatives_el": "μιζέρια/μίζερος",
+"sup": null,
+"latin": "miseror"
+},
+{
+"lesson": 35,
+"latin_raw": "plebs και plebes",
+"starred": true,
+"text": "οι πληβείοι––η πλέμπα, η πλεμπάγια (ο όχλος)",
+"meaning_el": "οι πληβείοι",
+"derivatives_el": "η πλέμπα, η πλεμπάγια (ο όχλος)",
+"sup": null,
+"latin": "plebs και plebes"
+},
+{
+"lesson": 35,
+"latin_raw": "curo",
+"starred": true,
+"text": "φροντίζω––η κούρα (η φροντίδα), κουράρω",
+"meaning_el": "φροντίζω",
+"derivatives_el": "η κούρα (η φροντίδα), κουράρω",
+"sup": null,
+"latin": "curo"
+},
+{
+"lesson": 35,
+"latin_raw": "mercenarius",
+"starred": true,
+"text": "μισθωτός εργάτης––ο μερκαντιλισμός (εμποροκρατία, οικονομικό σύστημα)",
+"meaning_el": "μισθωτός εργάτης",
+"derivatives_el": "ο μερκαντιλισμός (εμποροκρατία, οικονομικό σύστημα)",
+"sup": null,
+"latin": "mercenarius"
+},
+{
+"lesson": 36,
+"latin_raw": "scamnum",
+"starred": false,
+"text": "το σκαμνί––σκαμνί",
+"meaning_el": "το σκαμνί",
+"derivatives_el": "σκαμνί",
+"sup": null,
+"latin": "scamnum"
+},
+{
+"lesson": 36,
+"latin_raw": "solvo",
+"starred": false,
+"text": "λύνω––σβέλτος",
+"meaning_el": "λύνω",
+"derivatives_el": "σβέλτος",
+"sup": null,
+"latin": "solvo"
+},
+{
+"lesson": 36,
+"latin_raw": "maximus",
+"starred": true,
+"text": "μέγιστος––το μάξι (μακρύ φόρεμα), ο μαξιμαλισμός (η προβολή αιτημάτων στο υπέρτατο όριο), ο Μάξιμος (κύριο όνομα)",
+"meaning_el": "μέγιστος",
+"derivatives_el": "το μάξι (μακρύ φόρεμα), ο μαξιμαλισμός (η προβολή αιτημάτων στο υπέρτατο όριο), ο Μάξιμος (κύριο όνομα)",
+"sup": null,
+"latin": "maximus"
+},
+{
+"lesson": 36,
+"latin_raw": "mitto",
+"starred": true,
+"text": "στέλνω––ο κομισάριος (επίτροπος), ο μισιονάριος (ο ιεραπόστολος της καθολικής εκκλησίας)",
+"meaning_el": "στέλνω",
+"derivatives_el": "ο κομισάριος (επίτροπος), ο μισιονάριος (ο ιεραπόστολος της καθολικής εκκλησίας)",
+"sup": null,
+"latin": "mitto"
+},
+{
+"lesson": 36,
+"latin_raw": "impero",
+"starred": true,
+"text": "διατάζω––ο ιμπεριαλισμός (τάση για εδαφική επέκταση ή κατάκτηση)",
+"meaning_el": "διατάζω",
+"derivatives_el": "ο ιμπεριαλισμός (τάση για εδαφική επέκταση ή κατάκτηση)",
+"sup": null,
+"latin": "impero"
+},
+{
+"lesson": 37,
+"latin_raw": "casus",
+"starred": false,
+"text": "τυχαίο ή απροσδόκητο περιστατικό––(το) κάζο (ζημιά, πάθημα, στραπάτσο)",
+"meaning_el": "τυχαίο ή απροσδόκητο περιστατικό",
+"derivatives_el": "(το) κάζο (ζημιά, πάθημα, στραπάτσο)",
+"sup": null,
+"latin": "casus"
+},
+{
+"lesson": 37,
+"latin_raw": "miseror",
+"starred": true,
+"text": "λυπάμαι––μιζέρια, μίζερος",
+"meaning_el": "λυπάμαι",
+"derivatives_el": "μιζέρια, μίζερος",
+"sup": null,
+"latin": "miseror"
+},
+{
+"lesson": 37,
+"latin_raw": "miser",
+"starred": true,
+"text": "δυστυχής––μιζέρια, μίζερος",
+"meaning_el": "δυστυχής",
+"derivatives_el": "μιζέρια, μίζερος",
+"sup": null,
+"latin": "miser"
+},
+{
+"lesson": 37,
+"latin_raw": "natura",
+"starred": false,
+"text": "η φύση––νατουραλισμός (αισθητικό κίνημα)",
+"meaning_el": "η φύση",
+"derivatives_el": "νατουραλισμός (αισθητικό κίνημα)",
+"sup": null,
+"latin": "natura"
+},
+{
+"lesson": 37,
+"latin_raw": "servus",
+"starred": true,
+"text": "δούλος, υπηρέτης––σερβιτόρος, σερβίρω",
+"meaning_el": "δούλος, υπηρέτης",
+"derivatives_el": "σερβιτόρος, σερβίρω",
+"sup": null,
+"latin": "servus"
+},
+{
+"lesson": 37,
+"latin_raw": "populus",
+"starred": true,
+"text": "ο λαός––το πόπολο (ο λαός υποτιμητικά), ποπ (κάτι δημοφιλές, για το ευρύ κοινό, εμπορική μουσική), Ποπ Αρτ κ.ο.κ.",
+"meaning_el": "ο λαός",
+"derivatives_el": "το πόπολο (ο λαός υποτιμητικά), ποπ (κάτι δημοφιλές, για το ευρύ κοινό, εμπορική μουσική), Ποπ Αρτ κ.ο.κ.",
+"sup": null,
+"latin": "populus"
+},
+{
+"lesson": 37,
+"latin_raw": "res",
+"starred": true,
+"text": "πράγμα––ρεαλισμός",
+"meaning_el": "πράγμα",
+"derivatives_el": "ρεαλισμός",
+"sup": null,
+"latin": "res"
+},
+{
+"lesson": 37,
+"latin_raw": "furor",
+"starred": true,
+"text": "η μανία––φουριόζος, η φούρια (η πιεστική βιασύνη)",
+"meaning_el": "η μανία",
+"derivatives_el": "φουριόζος, η φούρια (η πιεστική βιασύνη)",
+"sup": null,
+"latin": "furor"
+},
+{
+"lesson": 37,
+"latin_raw": "victor",
+"starred": true,
+"text": "ο νικητής, victoria: η νίκη––Βίκτωρ, Βικτωρία (κύρια ονόματα)",
+"meaning_el": "ο νικητής, victoria: η νίκη",
+"derivatives_el": "Βίκτωρ, Βικτωρία (κύρια ονόματα)",
+"sup": null,
+"latin": "victor"
+},
+{
+"lesson": 37,
+"latin_raw": "pugno",
+"starred": true,
+"text": "μάχομαι––η μπουνιά",
+"meaning_el": "μάχομαι",
+"derivatives_el": "η μπουνιά",
+"sup": null,
+"latin": "pugno"
+},
+{
+"lesson": 38,
+"latin_raw": "natura",
+"starred": false,
+"text": "η φύση––νατουραλισμός (αισθητικό κίνημα)",
+"meaning_el": "η φύση",
+"derivatives_el": "νατουραλισμός (αισθητικό κίνημα)",
+"sup": null,
+"latin": "natura"
+},
+{
+"lesson": 38,
+"latin_raw": "mos",
+"starred": true,
+"text": "έθιμο, ήθος––αμοραλιστής, αμοραλισμός",
+"meaning_el": "έθιμο, ήθος",
+"derivatives_el": "αμοραλιστής, αμοραλισμός",
+"sup": null,
+"latin": "mos"
+},
+{
+"lesson": 38,
+"latin_raw": "res",
+"starred": true,
+"text": "πράγμα, η πραγματικότητα––ρεαλισμός",
+"meaning_el": "πράγμα, η πραγματικότητα",
+"derivatives_el": "ρεαλισμός",
+"sup": null,
+"latin": "res"
+},
+{
+"lesson": 38,
+"latin_raw": "mora",
+"starred": true,
+"text": "η καθυστέρηση––το μορατόριουμ (συμφωνία για αναστολή προκλητικών ενεργειών μεταξύ κρατών)",
+"meaning_el": "η καθυστέρηση",
+"derivatives_el": "το μορατόριουμ (συμφωνία για αναστολή προκλητικών ενεργειών μεταξύ κρατών)",
+"sup": null,
+"latin": "mora"
+},
+{
+"lesson": 38,
+"latin_raw": "morior (σουπίνο mortuum)",
+"starred": true,
+"text": "πεθαίνω––ο μόρτης (ο μάγκας, ο αλήτης)",
+"meaning_el": "πεθαίνω",
+"derivatives_el": "ο μόρτης (ο μάγκας, ο αλήτης)",
+"sup": "mortuum",
+"latin": "morior"
+},
+{
+"lesson": 39,
+"latin_raw": "premo",
+"starred": false,
+"text": "πιέζω––η πρέσα, πρεσάρω",
+"meaning_el": "πιέζω",
+"derivatives_el": "η πρέσα, πρεσάρω",
+"sup": null,
+"latin": "premo"
+},
+{
+"lesson": 39,
+"latin_raw": "materia",
+"starred": false,
+"text": "ύλη––ματεριαλισμός (υλισμός)",
+"meaning_el": "ύλη",
+"derivatives_el": "ματεριαλισμός (υλισμός)",
+"sup": null,
+"latin": "materia"
+},
+{
+"lesson": 39,
+"latin_raw": "miles",
+"starred": false,
+"text": "στρατιώτης––μιλιταρισμός (υπάρχει στο μάθημα 16 αναφορικά με το militaris)",
+"meaning_el": "στρατιώτης",
+"derivatives_el": "μιλιταρισμός (υπάρχει στο μάθημα 16 αναφορικά με το militaris)",
+"sup": null,
+"latin": "miles"
+},
+{
+"lesson": 39,
+"latin_raw": "minus",
+"starred": false,
+"text": "λιγότερο–– το μίνι, μινόρε (υπάρχει στα ετυμολογικά του μαθ. 26 αναφορικά με το minor)",
+"meaning_el": "λιγότερο",
+"derivatives_el": "το μίνι, μινόρε (υπάρχει στα ετυμολογικά του μαθ. 26 αναφορικά με το minor)",
+"sup": null,
+"latin": "minus"
+},
+{
+"lesson": 39,
+"latin_raw": "res",
+"starred": true,
+"text": "πράγμα, η πραγματικότητα––ρεαλισμός",
+"meaning_el": "πράγμα, η πραγματικότητα",
+"derivatives_el": "ρεαλισμός",
+"sup": null,
+"latin": "res"
+},
+{
+"lesson": 39,
+"latin_raw": "virtus",
+"starred": true,
+"text": "αρετή, χάρισμα––βιρτουόζος (δεξιοτέχνης)",
+"meaning_el": "αρετή, χάρισμα",
+"derivatives_el": "βιρτουόζος (δεξιοτέχνης)",
+"sup": null,
+"latin": "virtus"
+},
+{
+"lesson": 39,
+"latin_raw": "fortuna",
+"starred": true,
+"text": "τύχη––φουρτούνα",
+"meaning_el": "τύχη",
+"derivatives_el": "φουρτούνα",
+"sup": null,
+"latin": "fortuna"
+},
+{
+"lesson": 39,
+"latin_raw": "ago",
+"starred": true,
+"text": "κάνω, οδηγώ––ο ακτιβισμός (έντονες μορφές αγώνα για την επίτευξη στόχων), ακτιβιστής",
+"meaning_el": "κάνω, οδηγώ",
+"derivatives_el": "ο ακτιβισμός (έντονες μορφές αγώνα για την επίτευξη στόχων), ακτιβιστής",
+"sup": null,
+"latin": "ago"
+},
+{
+"lesson": 39,
+"latin_raw": "imperator",
+"starred": true,
+"text": "στρατηγός–– ο ιμπεριαλισμός, ιμπεριαλιστής",
+"meaning_el": "στρατηγός",
+"derivatives_el": "ο ιμπεριαλισμός, ιμπεριαλιστής",
+"sup": null,
+"latin": "imperator"
+},
+{
+"lesson": 39,
+"latin_raw": "optimus",
+"starred": true,
+"text": "άριστος––ο οπτιμισμός (στάση ζωής που προσδοκά καλή εξέλιξη των πραγμάτων)",
+"meaning_el": "άριστος",
+"derivatives_el": "ο οπτιμισμός (στάση ζωής που προσδοκά καλή εξέλιξη των πραγμάτων)",
+"sup": null,
+"latin": "optimus"
+},
+{
+"lesson": 40,
+"latin_raw": "armatus",
+"starred": false,
+"text": "οπλισμένος––άρματα, αρματολός (υπάρχει στο μάθημα 16 αναφορικά με το arma)",
+"meaning_el": "οπλισμένος",
+"derivatives_el": "άρματα, αρματολός (υπάρχει στο μάθημα 16 αναφορικά με το arma)",
+"sup": null,
+"latin": "armatus"
+},
+{
+"lesson": 40,
+"latin_raw": "solus",
+"starred": false,
+"text": "μόνος–– (το) σόλο",
+"meaning_el": "μόνος",
+"derivatives_el": "(το) σόλο",
+"sup": null,
+"latin": "solus"
+},
+{
+"lesson": 40,
+"latin_raw": "conservo",
+"starred": false,
+"text": "σώζω––κονσέρβα",
+"meaning_el": "σώζω",
+"derivatives_el": "κονσέρβα",
+"sup": null,
+"latin": "conservo"
+},
+{
+"lesson": 40,
+"latin_raw": "celeriter",
+"starred": false,
+"text": "γρήγορα––ο κέλητας (γρήγορο άλογο)",
+"meaning_el": "γρήγορα",
+"derivatives_el": "ο κέλητας (γρήγορο άλογο)",
+"sup": null,
+"latin": "celeriter"
+},
+{
+"lesson": 40,
+"latin_raw": "miles",
+"starred": false,
+"text": "στρατιώτης––μιλιταρισμός (υπάρχει στο μάθημα 16 αναφορικά με το militaris)",
+"meaning_el": "στρατιώτης",
+"derivatives_el": "μιλιταρισμός (υπάρχει στο μάθημα 16 αναφορικά με το militaris)",
+"sup": null,
+"latin": "miles"
+},
+{
+"lesson": 40,
+"latin_raw": "res",
+"starred": true,
+"text": "πράγμα––ρεαλισμός",
+"meaning_el": "πράγμα",
+"derivatives_el": "ρεαλισμός",
+"sup": null,
+"latin": "res"
+},
+{
+"lesson": 41,
+"latin_raw": "antiquus",
+"starred": false,
+"text": "αρχαίος––η αντίκα",
+"meaning_el": "αρχαίος",
+"derivatives_el": "η αντίκα",
+"sup": null,
+"latin": "antiquus"
+},
+{
+"lesson": 41,
+"latin_raw": "antiquitas",
+"starred": true,
+"text": "η αρχαιότητα––η αντίκα",
+"meaning_el": "η αρχαιότητα",
+"derivatives_el": "η αντίκα",
+"sup": null,
+"latin": "antiquitas"
+},
+{
+"lesson": 41,
+"latin_raw": "pectus",
+"starred": false,
+"text": "στήθος––(το) πέτο",
+"meaning_el": "στήθος",
+"derivatives_el": "(το) πέτο",
+"sup": null,
+"latin": "pectus"
+},
+{
+"lesson": 41,
+"latin_raw": "homo",
+"starred": true,
+"text": "άνθρωπος––ουμανισμός (ανθρωπισμός)",
+"meaning_el": "άνθρωπος",
+"derivatives_el": "ουμανισμός (ανθρωπισμός)",
+"sup": null,
+"latin": "homo"
+},
+{
+"lesson": 41,
+"latin_raw": "bonus",
+"starred": true,
+"text": "καλός––το μπόνους, η μπουνάτσα (η καλοκαιρία)",
+"meaning_el": "καλός",
+"derivatives_el": "το μπόνους, η μπουνάτσα (η καλοκαιρία)",
+"sup": null,
+"latin": "bonus"
+},
+{
+"lesson": 41,
+"latin_raw": "verbum",
+"starred": true,
+"text": "ο λόγος––ο βερμπαλισμός (η χρήση εντυπωσιακών εκφραστικών σχημάτων), ο βερμπαλιστής",
+"meaning_el": "ο λόγος",
+"derivatives_el": "ο βερμπαλισμός (η χρήση εντυπωσιακών εκφραστικών σχημάτων), ο βερμπαλιστής",
+"sup": null,
+"latin": "verbum"
+},
+{
+"lesson": 41,
+"latin_raw": "intelligo/intellego",
+"starred": true,
+"text": "καταλαβαίνω––η ιντελιγκέντσια (η ιδιαίτερη ομάδα των διανοουμένων)",
+"meaning_el": "καταλαβαίνω",
+"derivatives_el": "η ιντελιγκέντσια (η ιδιαίτερη ομάδα των διανοουμένων)",
+"sup": null,
+"latin": "intelligo/intellego"
+},
+{
+"lesson": 41,
+"latin_raw": "colo (colui - cultum - colere 3)",
+"starred": true,
+"text": "καλλιεργώ––κουλτούρα",
+"meaning_el": "καλλιεργώ",
+"derivatives_el": "κουλτούρα",
+"sup": null,
+"latin": "colo colui - cultum - colere 3"
+},
+{
+"lesson": 41,
+"latin_raw": "placeo",
+"starred": true,
+"text": "αρέσω––το πλασέμπο (εικονικό φάρμακο που παράγει στον ασθενή την αυθυποβολή της βελτίωσης της κατάστασής του)",
+"meaning_el": "αρέσω",
+"derivatives_el": "το πλασέμπο (εικονικό φάρμακο που παράγει στον ασθενή την αυθυποβολή της βελτίωσης της κατάστασής του)",
+"sup": null,
+"latin": "placeo"
+},
+{
+"lesson": 42,
+"latin_raw": "castra",
+"starred": true,
+"text": "στρατόπεδο (castrum: φρούριο)––κάστρο",
+"meaning_el": "στρατόπεδο (castrum: φρούριο)",
+"derivatives_el": "κάστρο",
+"sup": null,
+"latin": "castra"
+},
+{
+"lesson": 42,
+"latin_raw": "regie",
+"starred": true,
+"text": "με τρόπο τυραννικό/βασιλικό––ο ρήγας (βασιλιάς)",
+"meaning_el": "με τρόπο τυραννικό/βασιλικό",
+"derivatives_el": "ο ρήγας (βασιλιάς)",
+"sup": null,
+"latin": "regie"
+},
+{
+"lesson": 42,
+"latin_raw": "intelligo",
+"starred": true,
+"text": "καταλαβαίνω––η ιντελιγκέντσια (η ιδιαίτερη ομάδα των διανοουμένων)",
+"meaning_el": "καταλαβαίνω",
+"derivatives_el": "η ιντελιγκέντσια (η ιδιαίτερη ομάδα των διανοουμένων)",
+"sup": null,
+"latin": "intelligo"
+},
+{
+"lesson": 43,
+"latin_raw": "castra",
+"starred": true,
+"text": "στρατόπεδο (castrum: φρούριο)––κάστρο",
+"meaning_el": "στρατόπεδο (castrum: φρούριο)",
+"derivatives_el": "κάστρο",
+"sup": null,
+"latin": "castra"
+},
+{
+"lesson": 43,
+"latin_raw": "finis",
+"starred": false,
+"text": "τέλος, όριο––φινάλε",
+"meaning_el": "τέλος, όριο",
+"derivatives_el": "φινάλε",
+"sup": null,
+"latin": "finis"
+},
+{
+"lesson": 43,
+"latin_raw": "cado",
+"starred": false,
+"text": "πέφτω ––(το) κάζο (ζημιά, πάθημα, στραπάτσο)",
+"meaning_el": "πέφτω",
+"derivatives_el": "(το) κάζο (ζημιά, πάθημα, στραπάτσο)",
+"sup": null,
+"latin": "cado"
+},
+{
+"lesson": 43,
+"latin_raw": "miser",
+"starred": true,
+"text": "δυστυχής––μιζέρια, μίζερος",
+"meaning_el": "δυστυχής",
+"derivatives_el": "μιζέρια, μίζερος",
+"sup": null,
+"latin": "miser"
+},
+{
+"lesson": 43,
+"latin_raw": "succurrit",
+"starred": true,
+"text": "έρχεται κάτι στο μυαλό––curro: τρέχω––η κούρσα (αγώνας ταχύτητας, το τρέξιμο), ο κούριερ (ο ταχυδιανομέας)",
+"meaning_el": "έρχεται κάτι στο μυαλό",
+"derivatives_el": "curro: τρέχω––η κούρσα (αγώνας ταχύτητας, το τρέξιμο), ο κούριερ (ο ταχυδιανομέας)",
+"sup": null,
+"latin": "succurrit"
+},
+{
+"lesson": 43,
+"latin_raw": "futurus -a -um",
+"starred": true,
+"text": "μετοχή μέλλοντα του sum––φουτουριστικός, φουτουρισμός",
+"meaning_el": "μετοχή μέλλοντα του sum",
+"derivatives_el": "φουτουριστικός, φουτουρισμός",
+"sup": null,
+"latin": "futurus -a -um"
+},
+{
+"lesson": 43,
+"latin_raw": "servitus",
+"starred": true,
+"text": "δουλεία––σερβιτόρος, σερβίρω",
+"meaning_el": "δουλεία",
+"derivatives_el": "σερβιτόρος, σερβίρω",
+"sup": null,
+"latin": "servitus"
+},
+{
+"lesson": 43,
+"latin_raw": "finis",
+"starred": false,
+"text": "τέλος, όριο––το φινάλε",
+"meaning_el": "τέλος, όριο",
+"derivatives_el": "το φινάλε",
+"sup": null,
+"latin": "finis"
+},
+{
+"lesson": 43,
+"latin_raw": "patior",
+"starred": false,
+"text": "ανέχομαι, υπομένω––η πασιέντσα",
+"meaning_el": "ανέχομαι, υπομένω",
+"derivatives_el": "η πασιέντσα",
+"sup": null,
+"latin": "patior"
+},
+{
+"lesson": 43,
+"latin_raw": "vita",
+"starred": true,
+"text": "ζωή––η βιταμίνη",
+"meaning_el": "ζωή",
+"derivatives_el": "η βιταμίνη",
+"sup": null,
+"latin": "vita"
+},
+{
+"lesson": 44,
+"latin_raw": "cado",
+"starred": false,
+"text": "πέφτω––(το) κάζο (ζημιά, πάθημα, στραπάτσο) (υπάρχει στα σχόλια του μαθήματος 43)",
+"meaning_el": "πέφτω",
+"derivatives_el": "(το) κάζο (ζημιά, πάθημα, στραπάτσο) (υπάρχει στα σχόλια του μαθήματος 43)",
+"sup": null,
+"latin": "cado"
+},
+{
+"lesson": 44,
+"latin_raw": "forte",
+"starred": false,
+"text": "τυχαία, ίσως/fortuna: τύχη––φουρτούνα *colo (colui – cultum – colere 3): καλλιεργώ––κουλτούρα",
+"meaning_el": "τυχαία, ίσως/fortuna: τύχη",
+"derivatives_el": "φουρτούνα *colo (colui – cultum – colere 3): καλλιεργώ––κουλτούρα",
+"sup": null,
+"latin": "forte"
+},
+{
+"lesson": 44,
+"latin_raw": "tempus",
+"starred": false,
+"text": "ο χρόνος––το τέμπο (ο ρυθμός)",
+"meaning_el": "ο χρόνος",
+"derivatives_el": "το τέμπο (ο ρυθμός)",
+"sup": null,
+"latin": "tempus"
+},
+{
+"lesson": 44,
+"latin_raw": "intelligo",
+"starred": true,
+"text": "καταλαβαίνω––η ιντελιγκέντσια (η ιδιαίτερη ομάδα των διανοουμένων)",
+"meaning_el": "καταλαβαίνω",
+"derivatives_el": "η ιντελιγκέντσια (η ιδιαίτερη ομάδα των διανοουμένων)",
+"sup": null,
+"latin": "intelligo"
+},
+{
+"lesson": 44,
+"latin_raw": "vita",
+"starred": true,
+"text": "ζωή––η βιταμίνη",
+"meaning_el": "ζωή",
+"derivatives_el": "η βιταμίνη",
+"sup": null,
+"latin": "vita"
+},
+{
+"lesson": 45,
+"latin_raw": "castra",
+"starred": true,
+"text": "στρατόπεδο (castrum: φρούριο)––κάστρο",
+"meaning_el": "στρατόπεδο (castrum: φρούριο)",
+"derivatives_el": "κάστρο",
+"sup": null,
+"latin": "castra"
+},
+{
+"lesson": 45,
+"latin_raw": "celeriter",
+"starred": false,
+"text": "γρήγορα––ο κέλητας (γρήγορο άλογο)",
+"meaning_el": "γρήγορα",
+"derivatives_el": "ο κέλητας (γρήγορο άλογο)",
+"sup": null,
+"latin": "celeriter"
+},
+{
+"lesson": 45,
+"latin_raw": "casus",
+"starred": false,
+"text": "τυχαίο ή απροσδόκητο περιστατικό––(το) κάζο (ζημιά, πάθημα, στραπάτσο) (υπάρχει στα σχόλια του μαθ. 37)",
+"meaning_el": "τυχαίο ή απροσδόκητο περιστατικό",
+"derivatives_el": "(το) κάζο (ζημιά, πάθημα, στραπάτσο) (υπάρχει στα σχόλια του μαθ. 37)",
+"sup": null,
+"latin": "casus"
+},
+{
+"lesson": 45,
+"latin_raw": "miles",
+"starred": false,
+"text": "στρατιώτης––μιλιταρισμός (υπάρχει στο μάθημα 16 αναφορικά με το militaris)",
+"meaning_el": "στρατιώτης",
+"derivatives_el": "μιλιταρισμός (υπάρχει στο μάθημα 16 αναφορικά με το militaris)",
+"sup": null,
+"latin": "miles"
+},
+{
+"lesson": 45,
+"latin_raw": "curo",
+"starred": true,
+"text": "φροντίζω––η κούρα (η φροντίδα), κουράρω",
+"meaning_el": "φροντίζω",
+"derivatives_el": "η κούρα (η φροντίδα), κουράρω",
+"sup": null,
+"latin": "curo"
+},
+{
+"lesson": 45,
+"latin_raw": "mitto (σουπίνο missum)",
+"starred": true,
+"text": "στέλνω––κομισάριος (επίτροπος), μισιονάριος (ιεραπόστολος καθολικής εκκλησίας)",
+"meaning_el": "στέλνω",
+"derivatives_el": "κομισάριος (επίτροπος), μισιονάριος (ιεραπόστολος καθολικής εκκλησίας)",
+"sup": "missum",
+"latin": "mitto"
+},
+{
+"lesson": 45,
+"latin_raw": "res",
+"starred": true,
+"text": "πράγμα––ρεαλισμός",
+"meaning_el": "πράγμα",
+"derivatives_el": "ρεαλισμός",
+"sup": null,
+"latin": "res"
+},
+{
+"lesson": 46,
+"latin_raw": "communis",
+"starred": true,
+"text": "κοινός––κομουνισμός (υπάρχει στα σχόλια του μαθ. 17)",
+"meaning_el": "κοινός",
+"derivatives_el": "κομουνισμός (υπάρχει στα σχόλια του μαθ. 17)",
+"sup": null,
+"latin": "communis"
+},
+{
+"lesson": 46,
+"latin_raw": "natura",
+"starred": false,
+"text": "η φύση––νατουραλισμός (αισθητικό κίνημα) (υπάρχει στα σχόλια του μαθ. 38)",
+"meaning_el": "η φύση",
+"derivatives_el": "νατουραλισμός (αισθητικό κίνημα) (υπάρχει στα σχόλια του μαθ. 38)",
+"sup": null,
+"latin": "natura"
+},
+{
+"lesson": 46,
+"latin_raw": "res publica",
+"starred": true,
+"text": "η πολιτεία, η δημοκρατία––ρεπουμπλικάνοι (πολιτικό κόμμα των ΗΠΑ)",
+"meaning_el": "η πολιτεία, η δημοκρατία",
+"derivatives_el": "ρεπουμπλικάνοι (πολιτικό κόμμα των ΗΠΑ)",
+"sup": null,
+"latin": "res publica"
+},
+{
+"lesson": 46,
+"latin_raw": "rego",
+"starred": true,
+"text": "κατευθύνω, κυβερνώ––ο ρήγας (ο βασιλιάς)",
+"meaning_el": "κατευθύνω, κυβερνώ",
+"derivatives_el": "ο ρήγας (ο βασιλιάς)",
+"sup": null,
+"latin": "rego"
+},
+{
+"lesson": 46,
+"latin_raw": "pars",
+"starred": true,
+"text": "το μέρος––η πάρτη (ο εαυτός μου, τα προσωπικά μου συμφέροντα), το πάρτι, η παρτίδα, η παρτιτούρα",
+"meaning_el": "το μέρος",
+"derivatives_el": "η πάρτη (ο εαυτός μου, τα προσωπικά μου συμφέροντα), το πάρτι, η παρτίδα, η παρτιτούρα",
+"sup": null,
+"latin": "pars"
+},
+{
+"lesson": 46,
+"latin_raw": "cado",
+"starred": false,
+"text": "πέφτω––(το) κάζο (ζημιά, πάθημα, στραπάτσο) (υπάρχει στα σχόλια του μαθ. 37)",
+"meaning_el": "πέφτω",
+"derivatives_el": "(το) κάζο (ζημιά, πάθημα, στραπάτσο) (υπάρχει στα σχόλια του μαθ. 37)",
+"sup": null,
+"latin": "cado"
+},
+{
+"lesson": 46,
+"latin_raw": "decet",
+"starred": true,
+"text": "αρμόζει––το ντεκόρ",
+"meaning_el": "αρμόζει",
+"derivatives_el": "το ντεκόρ",
+"sup": null,
+"latin": "decet"
+},
+{
+"lesson": 46,
+"latin_raw": "homo",
+"starred": true,
+"text": "άνθρωπος––ουμανισμός (ανθρωπισμός)",
+"meaning_el": "άνθρωπος",
+"derivatives_el": "ουμανισμός (ανθρωπισμός)",
+"sup": null,
+"latin": "homo"
+},
+{
+"lesson": 46,
+"latin_raw": "bonus",
+"starred": true,
+"text": "καλός––το μπόνους, η μπουνάτσα (η καλοκαιρία)",
+"meaning_el": "καλός",
+"derivatives_el": "το μπόνους, η μπουνάτσα (η καλοκαιρία)",
+"sup": null,
+"latin": "bonus"
+},
+{
+"lesson": 47,
+"latin_raw": "vestis",
+"starred": false,
+"text": "φόρεμα––βεστιάριο",
+"meaning_el": "φόρεμα",
+"derivatives_el": "βεστιάριο",
+"sup": null,
+"latin": "vestis"
+},
+{
+"lesson": 47,
+"latin_raw": "tempus",
+"starred": false,
+"text": "ο χρόνος––το τέμπο (ο ρυθμός)",
+"meaning_el": "ο χρόνος",
+"derivatives_el": "το τέμπο (ο ρυθμός)",
+"sup": null,
+"latin": "tempus"
+},
+{
+"lesson": 47,
+"latin_raw": "(ex)traho",
+"starred": false,
+"text": "τραβάω (έξω)––το τρακτέρ",
+"meaning_el": "τραβάω (έξω)",
+"derivatives_el": "το τρακτέρ",
+"sup": null,
+"latin": "extraho"
+},
+{
+"lesson": 47,
+"latin_raw": "video",
+"starred": true,
+"text": "βλέπω––το βίντεο",
+"meaning_el": "βλέπω",
+"derivatives_el": "το βίντεο",
+"sup": null,
+"latin": "video"
+},
+{
+"lesson": 48,
+"latin_raw": "albus",
+"starred": false,
+"text": "λευκός––(το) άλμπουμ",
+"meaning_el": "λευκός",
+"derivatives_el": "(το) άλμπουμ",
+"sup": null,
+"latin": "albus"
+},
+{
+"lesson": 48,
+"latin_raw": "instinguo (σουπίνο instinctum)",
+"starred": false,
+"text": "παρορμώ, κατευθύνω–– το ένστικτο",
+"meaning_el": "παρορμώ, κατευθύνω",
+"derivatives_el": "το ένστικτο",
+"sup": "instinctum",
+"latin": "instinguo"
+},
+{
+"lesson": 48,
+"latin_raw": "durus",
+"starred": false,
+"text": "σκληρός––ντούρος (σκληρός, αυτός που δε λυγίζει)",
+"meaning_el": "σκληρός",
+"derivatives_el": "ντούρος (σκληρός, αυτός που δε λυγίζει)",
+"sup": null,
+"latin": "durus"
+},
+{
+"lesson": 48,
+"latin_raw": "pulchritudo",
+"starred": true,
+"text": "η ομορφιά––Πουλχερία (κύριο όνομα)",
+"meaning_el": "η ομορφιά",
+"derivatives_el": "Πουλχερία (κύριο όνομα)",
+"sup": null,
+"latin": "pulchritudo"
+},
+{
+"lesson": 48,
+"latin_raw": "impero",
+"starred": true,
+"text": "διατάζω––ο ιμπεριαλισμός (τάση για εδαφική επέκταση ή κατάκτηση)",
+"meaning_el": "διατάζω",
+"derivatives_el": "ο ιμπεριαλισμός (τάση για εδαφική επέκταση ή κατάκτηση)",
+"sup": null,
+"latin": "impero"
+},
+{
+"lesson": 48,
+"latin_raw": "miles",
+"starred": false,
+"text": "στρατιώτης––μιλιταρισμός (υπάρχει στο μάθημα 16 αναφορικά με το militaris)",
+"meaning_el": "στρατιώτης",
+"derivatives_el": "μιλιταρισμός (υπάρχει στο μάθημα 16 αναφορικά με το militaris)",
+"sup": null,
+"latin": "miles"
+},
+{
+"lesson": 48,
+"latin_raw": "doceo",
+"starred": false,
+"text": "διδάσκω––ντοκουμέντο",
+"meaning_el": "διδάσκω",
+"derivatives_el": "ντοκουμέντο",
+"sup": null,
+"latin": "doceo"
+},
+{
+"lesson": 48,
+"latin_raw": "video",
+"starred": true,
+"text": "βλέπω––το βίντεο",
+"meaning_el": "βλέπω",
+"derivatives_el": "το βίντεο",
+"sup": null,
+"latin": "video"
+},
+{
+"lesson": 48,
+"latin_raw": "servus",
+"starred": true,
+"text": "δούλος, υπηρέτης––σερβιτόρος, σερβίρω",
+"meaning_el": "δούλος, υπηρέτης",
+"derivatives_el": "σερβιτόρος, σερβίρω",
+"sup": null,
+"latin": "servus"
+},
+{
+"lesson": 49,
+"latin_raw": "forte",
+"starred": true,
+"text": "τυχαία, ίσως/fortuna: τύχη––φουρτούνα",
+"meaning_el": "τυχαία, ίσως/fortuna: τύχη",
+"derivatives_el": "φουρτούνα",
+"sup": null,
+"latin": "forte"
+},
+{
+"lesson": 49,
+"latin_raw": "ferrum",
+"starred": true,
+"text": "σίδηρος––η φεριτίνη (πρωτεΐνη που ρυθμίζει τον σίδηρο του οργανισμού)",
+"meaning_el": "σίδηρος",
+"derivatives_el": "η φεριτίνη (πρωτεΐνη που ρυθμίζει τον σίδηρο του οργανισμού)",
+"sup": null,
+"latin": "ferrum"
+},
+{
+"lesson": 49,
+"latin_raw": "officium",
+"starred": true,
+"text": "καθήκον, έργο––το οφίκιο ή οφίτσιο (τίτλος, αξίωμα)",
+"meaning_el": "καθήκον, έργο",
+"derivatives_el": "το οφίκιο ή οφίτσιο (τίτλος, αξίωμα)",
+"sup": null,
+"latin": "officium"
+},
+{
+"lesson": 49,
+"latin_raw": "factum",
+"starred": true,
+"text": "πράξη––ντεφάκτο (εκ των πραγμάτων, στην πράξη)",
+"meaning_el": "πράξη",
+"derivatives_el": "ντεφάκτο (εκ των πραγμάτων, στην πράξη)",
+"sup": null,
+"latin": "factum"
+},
+{
+"lesson": 50,
+"latin_raw": "solus",
+"starred": false,
+"text": "μόνος––(το) σόλο (υπάρχει στα σχόλια του μαθ. 40)",
+"meaning_el": "μόνος",
+"derivatives_el": "(το) σόλο (υπάρχει στα σχόλια του μαθ. 40)",
+"sup": null,
+"latin": "solus"
+},
+{
+"lesson": 50,
+"latin_raw": "mitto (σουπίνο missum)",
+"starred": true,
+"text": "στέλνω––κομισάριος (επίτροπος), μισιονάριος (ιεραπόστολος καθολικής εκκλησίας)",
+"meaning_el": "στέλνω",
+"derivatives_el": "κομισάριος (επίτροπος), μισιονάριος (ιεραπόστολος καθολικής εκκλησίας)",
+"sup": "missum",
+"latin": "mitto"
+},
+{
+"lesson": 50,
+"latin_raw": "placet",
+"starred": true,
+"text": "αρέσει––το πλασέμπο (εικονικό φάρμακο που παράγει στον ασθενή την αυθυποβολή της βελτίωσης της κατάστασής του)",
+"meaning_el": "αρέσει",
+"derivatives_el": "το πλασέμπο (εικονικό φάρμακο που παράγει στον ασθενή την αυθυποβολή της βελτίωσης της κατάστασής του)",
+"sup": null,
+"latin": "placet"
+},
+{
+"lesson": 50,
+"latin_raw": "imperium",
+"starred": true,
+"text": "εξουσία––ο ιμπεριαλισμός (τάση για εδαφική επέκταση ή κατάκτηση)",
+"meaning_el": "εξουσία",
+"derivatives_el": "ο ιμπεριαλισμός (τάση για εδαφική επέκταση ή κατάκτηση)",
+"sup": null,
+"latin": "imperium"
+},
+{
+"lesson": 50,
+"latin_raw": "magistra",
+"starred": true,
+"text": "η δασκάλα, η σύμβουλος––ο μάγιστρος (ανώτατο αξίωμα στην ύστερη ρωμαϊκή και βυζαντινή περίοδο)",
+"meaning_el": "η δασκάλα, η σύμβουλος",
+"derivatives_el": "ο μάγιστρος (ανώτατο αξίωμα στην ύστερη ρωμαϊκή και βυζαντινή περίοδο)",
+"sup": null,
+"latin": "magistra"
+}
+]
