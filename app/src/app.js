@@ -53,6 +53,7 @@
 
   // ---------- icons ----------
   const I = {
+    trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9.5 17h5"/></svg>',
     github: '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>',
     flame: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1 3.5-1.6 5.3-2.9 7.3C7.6 11.5 7 13 7 14.6 7 18.1 9.3 21 12 21s5-2.6 5-6.2c0-2.1-.9-3.7-2-5 .1 1.6-.5 2.8-1.6 3.3.5-3.6-.6-7.6-1.4-11.1z"/></svg>',
     coin: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="currentColor"/><text x="12" y="16" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="var(--surface)">D</text></svg>',
@@ -220,7 +221,7 @@
 
   // ---------- UI state ----------
   const ui = { tab: "learn", overlay: null, lexFilter: "all", lexQuery: "", confirmReset: false };
-  const TABS = [{ id: "learn", label: "Μάθε", icon: I.road }, { id: "lex", label: "Λεξικό", icon: I.scroll }, { id: "me", label: "Εγώ", icon: I.helmet }];
+  const TABS = [{ id: "learn", label: "Μάθε", icon: I.road }, { id: "lex", label: "Λεξικό", icon: I.scroll }, { id: "board", label: "Κατάταξη", icon: I.trophy }, { id: "me", label: "Εγώ", icon: I.helmet }];
   function setTab(id) { if (id !== ui.tab) track("tab_viewed", { tab: id }); ui.tab = id; if (location.hash !== `#${id}`) history.replaceState(null, "", `#${id}`); render(); scrollTo(0, 0); }
   addEventListener("hashchange", () => { const h = location.hash.slice(1); if (TABS.some((t) => t.id === h) && h !== ui.tab) { ui.tab = h; render(); } });
   const app = () => $("#app");
@@ -240,13 +241,88 @@
   function tabbar() {
     return `<nav class="tabbar" aria-label="Ενότητες"><div class="tabbar-inner">${TABS.map((t) => `<button class="tab" data-tab="${t.id}" ${ui.tab === t.id ? 'aria-current="page"' : ""}>${t.icon}<span>${t.label}</span></button>`).join("")}</div></nav>`;
   }
-  function siteNote() { return `<footer class="sitenote"><p><b>${FREE_NOTE}</b></p>${ghLink("btn ghost gh-cta", "footer", `${I.github}<span>Ο κώδικας στο GitHub</span>`)}<p>Η πρόοδος αποθηκεύεται σ' αυτή τη συσκευή. Οι τύποι ελέγχονται στη Γραμματική Τζάρτζανου και στο σχολικό βιβλίο· όπου υπάρχει αμφιβολία, η κάρτα το λέει.</p></footer>`; }
+  function siteNote() { return `<footer class="sitenote"><p class="sister">Αδελφή εφαρμογή: <a href="https://skepsis-greek.vercel.app/?utm_source=carpe&utm_medium=sister_link" target="_blank" rel="noopener">Skepsis</a>, οι ελληνικές ρίζες που κρύβονται στα αγγλικά.</p><p><b>${FREE_NOTE}</b></p>${ghLink("btn ghost gh-cta", "footer", `${I.github}<span>Ο κώδικας στο GitHub</span>`)}<p>Η πρόοδος αποθηκεύεται σ' αυτή τη συσκευή. Οι τύποι ελέγχονται στη Γραμματική Τζάρτζανου και στο σχολικό βιβλίο· όπου υπάρχει αμφιβολία, η κάρτα το λέει.</p></footer>`; }
 
   function render() {
     if (!S.onboarded) { app().innerHTML = onboarding(); bindOnboarding(); return; }
-    const body = { learn: learnView, lex: lexView, me: meView }[ui.tab]();
+    const body = { learn: learnView, lex: lexView, board: boardView, me: meView }[ui.tab]();
     app().innerHTML = topbar() + `<main class="view">${body}${siteNote()}</main>` + tabbar();
     bindCommon();
+  }
+
+  // ---------- weekly board (public website) ----------
+  // No database: every few hours a job adds up each player's XP for the week from the anonymous
+  // PostHog events we already send, and publishes it as a small file. Players appear under a name
+  // made from a hash of their anonymous PostHog id; raw ids are never published. Your own row uses
+  // your live XP from this browser.
+  const BOARD_URL = "https://skepsis-carpe-boards.vercel.app/carpe.json";
+  const board = { data: null, loading: false, failed: false, me: null };
+  const NAME_A = ["Velox", "Fortis", "Sapiens", "Audax", "Felix", "Prudens", "Ferox", "Nobilis", "Ingens", "Vigilans", "Constans", "Potens", "Elegans", "Fidelis", "Agilis", "Tenax"];
+  const NAME_B = ["Lupus", "Aquila", "Leo", "Ursus", "Vulpes", "Corvus", "Cervus", "Taurus", "Noctua", "Delphinus", "Equus", "Aper", "Columba", "Draco", "Cygnus", "Castor"];
+  const nickname = (h) => `${NAME_B[parseInt(h.slice(4, 8), 16) % NAME_B.length]} ${NAME_A[parseInt(h.slice(0, 4), 16) % NAME_A.length]}`;
+  /** A random id kept on this device, for the name you see when PostHog is blocked. */
+  function localBoardId() {
+    try {
+      let v = localStorage.getItem("carpe-board-id");
+      if (!v) { v = [...crypto.getRandomValues(new Uint8Array(6))].map((b) => b.toString(16).padStart(2, "0")).join(""); localStorage.setItem("carpe-board-id", v); }
+      return v;
+    } catch { return "a1b2c3d4e5f6"; }
+  }
+  async function loadBoard() {
+    if (board.loading) return;
+    board.loading = true; board.failed = false;
+    try {
+      const res = await fetch(BOARD_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error(String(res.status));
+      board.data = await res.json();
+    } catch { board.failed = true; }
+    try {
+      const id = window.posthog && typeof window.posthog.get_distinct_id === "function" ? window.posthog.get_distinct_id() : null;
+      if (id && crypto.subtle) {
+        const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("carpe:" + id));
+        board.me = [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("").slice(0, 12);
+      }
+    } catch { /* no id: you still see the board, just under a local name */ }
+    board.loading = false;
+    if (ui.tab === "board" && !ui.overlay) render();
+  }
+  function boardView() {
+    if (!board.data && !board.failed) { loadBoard(); return `<section class="card empty">${mascot()}<p>Φορτώνει η κατάταξη της εβδομάδας…</p></section>`; }
+    if (!board.data) return `<section class="card empty">${mascot("sad")}<p>Η κατάταξη δεν φορτώνει τώρα. Δοκίμασε ξανά αργότερα.</p></section>`;
+    const t = today(), wk = E.weekKey(t), d = board.data;
+    const sameWeek = d.week === wk;
+    const meH = board.me || localBoardId();
+    const myXp = E.weekXp(S, t);
+    const others = sameWeek ? d.top.filter((p) => p.h !== meH) : [];
+    const mine = sameWeek ? d.top.find((p) => p.h === meH) : null;
+    const allXp = sameWeek ? d.all_xp.slice() : [];
+    if (mine) allXp.splice(allXp.indexOf(mine.xp), 1);
+    const total = allXp.length + (myXp > 0 ? 1 : 0);
+    const rank = myXp > 0 ? 1 + allXp.filter((x) => x > myXp).length : null;
+    const rows = others.map((p) => ({ ...p, you: false }));
+    if (myXp > 0) rows.push({ h: meH, xp: myXp, l: null, s: E.liveStreak(S, t), you: true });
+    rows.sort((a, b) => b.xp - a.xp || (a.you ? -1 : 1));
+    const shown = rows.slice(0, 20);
+    const meRow = rows.find((r) => r.you);
+    const tail = meRow && !shown.includes(meRow) ? meRow : null;
+    const hrs = Math.max(0, Math.floor((Date.now() - new Date(d.updated).getTime()) / 3600000));
+    const row = (p, i) => `<div class="prow ${p.you ? "me" : ""}">
+        <span class="rank ${i < 3 ? "top" : ""}">${i + 1}</span>
+        <span class="av" style="--h:${parseInt(p.h.slice(0, 3), 16) % 360 || 30}">${esc(nickname(p.h)[0])}</span>
+        <div style="min-width:0"><div class="nm">${p.you ? "Εσύ · " : ""}${esc(nickname(p.h))}</div><div class="sub">${I.flame.replace("<svg", '<svg width="12" height="12" style="color:var(--flame);vertical-align:-1px"')} ${p.s || 0} ${(p.s || 0) === 1 ? "μέρα" : "μέρες"} σερί${p.l != null ? " · " + p.l + (p.l === 1 ? " μάθημα" : " μαθήματα") : ""}</div></div>
+        <span class="pts">${p.xp} δην.</span>
+      </div>`;
+    return `
+      <section style="display:flex;flex-direction:column;gap:6px"><div class="eyebrow">Αρένα · αυτή την εβδομάδα</div><h1>Κατάταξη εβδομάδας</h1>
+        <p class="muted" style="font-weight:700">Ξεκινά από την αρχή κάθε Δευτέρα. Όλοι εμφανίζονται με ένα τυχαίο λατινικό όνομα. Το δικό σου είναι <b>${esc(nickname(meH))}</b>.</p></section>
+      <section class="card" style="display:flex;flex-direction:column;gap:6px">
+        ${rank ? `<h3>Είσαι #${rank} από ${total} αυτή την εβδομάδα${total >= 5 ? ` · στο ${Math.max(1, Math.ceil((rank / total) * 100))}% των καλύτερων` : ""}</h3>` : `<h3>Τελείωσε ένα μάθημα για να μπεις στην κατάταξη</h3>`}
+        <p class="muted" style="font-weight:700;font-size:14px">${myXp} δηνάρια αυτή την εβδομάδα · ενημέρωση πριν από ${hrs < 1 ? "λιγότερο από μία ώρα" : hrs === 1 ? "1 ώρα" : hrs + " ώρες"}</p>
+      </section>
+      <section class="card" style="display:flex;flex-direction:column;gap:10px">
+        ${rows.length ? `<div class="board">${shown.map(row).join("")}${tail ? `<div class="prow gap">…</div>${row(tail, rank - 1)}` : ""}</div>` : `<div class="empty">${mascot()}<p class="muted" style="font-weight:700">Κανείς δεν έχει πάρει δηνάρια αυτή την εβδομάδα. Τελείωσε ένα μάθημα και πάρε την πρώτη θέση.</p></div>`}
+      </section>
+      <p class="muted" style="font-size:13px;font-weight:700;text-align:center">Φτιάχνεται από τα ανώνυμα στοιχεία χρήσης που ήδη μετράμε με το PostHog. Χωρίς ονόματα, χωρίς λογαριασμούς, τίποτα καινούργιο δεν αποθηκεύεται. Η δική σου θέση ενημερώνεται αμέσως, των άλλων κάθε λίγες ώρες.</p>`;
   }
 
   // ---------- onboarding ----------
