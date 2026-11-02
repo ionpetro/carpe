@@ -21,7 +21,34 @@
   const REPO = "https://github.com/ionpetro/carpe";
   /** Link to the open source code. `where` says which button was clicked, for analytics. */
   const ghLink = (cls, where, inner) => `<a class="${cls}" href="${REPO}" target="_blank" rel="noopener" data-gh="${where}" aria-label="Ο κώδικας του Carpe στο GitHub">${inner}</a>`;
-  /** The promise shown on every main screen: free forever, open code, and the one thing we track. */
+  // ---------- GitHub star prompt ----------
+  // Asked on the lesson-finished screen, never as a pop-up. The logs (Nov 2026) show nobody who
+  // finished a lesson had clicked GitHub, and most finishers stop after one lesson, so: ask after
+  // the first finished lesson; if "Όχι τώρα" (not now), ask once more on a later day after a perfect lesson
+  // or the daily goal. Never more than twice, never again after a click.
+  const STAR_KEY = "carpe-star-v1";
+  const starState = () => { try { return JSON.parse(localStorage.getItem(STAR_KEY) || "{}") || {}; } catch { return {}; } };
+  const saveStar = (st) => { try { localStorage.setItem(STAR_KEY, JSON.stringify(st)); } catch { /* storage blocked: we just may ask again */ } };
+  /** Counts this finished lesson and returns why to ask now ("first_lesson", "perfect", "daily_goal"), or null. */
+  function starMoment({ perfect, goalHit }) {
+    const st = starState();
+    st.lessons = (st.lessons || 0) + 1;
+    let why = null;
+    if (!st.clicked && (st.asks || 0) === 0) why = "first_lesson";
+    else if (!st.clicked && st.asks === 1 && st.lastAsk !== today() && (perfect || goalHit)) why = perfect ? "perfect" : "daily_goal";
+    if (why) { st.asks = (st.asks || 0) + 1; st.lastAsk = today(); }
+    saveStar(st);
+    return why ? { why, lessons: st.lessons, ask: st.asks } : null;
+  }
+  const starCard = () => `<div class="starask" id="starask" role="note">
+      <div class="starask-text"><b>Σου αρέσει το Carpe;</b><span>Είναι δωρεάν και ανοιχτό. Ένα αστέρι στο GitHub βοηθά κι άλλους μαθητές να το βρουν.</span></div>
+      <div class="starask-btns"><a class="btn gh-cta" id="star-go" href="${REPO}" target="_blank" rel="noopener">${I.github}<span>Αστέρι στο GitHub</span></a><button class="btn ghost" type="button" id="star-later">Όχι τώρα</button></div>
+    </div>`;
+  function bindStarCard(star) {
+    track("star_prompt_shown", { trigger: star.why, lessons: star.lessons, ask: star.ask });
+    $("#star-go").addEventListener("click", () => { const st = starState(); st.clicked = true; saveStar(st); track("star_prompt_clicked", { trigger: star.why, lessons: star.lessons, ask: star.ask }); track("github_clicked", { where: "star_prompt" }); $("#starask").remove(); });
+    $("#star-later").addEventListener("click", () => { track("star_prompt_dismissed", { trigger: star.why, lessons: star.lessons, ask: star.ask }); $("#starask").remove(); $("#next") && $("#next").focus(); });
+  }  /** The promise shown on every main screen: free forever, open code, and the one thing we track. */
   const FREE_NOTE = "Το Carpe είναι δωρεάν και θα μείνει πάντα δωρεάν. Ο κώδικας είναι ανοιχτός (MIT). Το μόνο που κάνουμε: μετράμε με το PostHog πώς χρησιμοποιείται, για να το κάνουμε καλύτερο. Χωρίς λογαριασμό, χωρίς διαφημίσεις.";
 
   // ---------- icons ----------
@@ -896,6 +923,7 @@
     syncProgress();
     const acc = run.scored ? Math.round((run.right / run.scored) * 100) : 100;
     const secs = Math.round((Date.now() - run.start) / 1000);
+    const star = starMoment({ perfect, goalHit: prevTodayXp < S.goal && (S.days[t] || 0) >= S.goal });
     sfx.done(); if (perfect || fresh.length || run.mode === "mock") confetti();
     const streakLine = !wasActive && st.streakUp ? (st.usedFreeze ? `Μια άδεια έσωσε το σερί. ${plural(S.streak, "μέρα", "μέρες")}!` : S.streak > 1 ? `Σερί ${plural(S.streak, "ημέρας", "ημερών")}!` : "Μέρα 1 του σερί. Τα λέμε αύριο.") : `Σερί: ${plural(S.streak, "μέρα", "μέρες")}.`;
     const bars = run.mode === "mock" || run.mode === "daily" ? `<div class="secbars">${Object.entries(sections).map(([sec, [g, m]]) => `<div class="secbar"><span>${esc(sec)}</span><div class="bar"><i style="width:${m ? (g / m) * 100 : 0}%"></i></div><span class="tnum">${Math.round(g * 10) / 10}/${Math.round(m * 10) / 10}</span></div>`).join("")}</div>` : "";
@@ -912,10 +940,12 @@
       <p style="font-weight:800">${esc(streakLine)}</p>
       ${sittingLine ? `<p class="muted" style="font-weight:700">${esc(sittingLine)}</p>` : ""}
       ${fresh.map((b) => `<div class="newbadge">${wreath(b.name[0]).replace("<svg", '<svg width="40" height="40"')}<div>Νέος τίτλος: ${esc(b.name)}<br><span class="muted">${esc(b.desc)}</span></div></div>`).join("")}
+      ${star ? starCard() : ""}
     </div>`, footerBtn("Συνέχεια", "gold"));
     $(".progress > i") && ($(".progress > i").style.width = "100%");
     $("#next").addEventListener("click", closeRun);
     $("#next").focus();
+    if (star) bindStarCard(star);
   }
 
   // ---------- Κολοσσαίο ----------
