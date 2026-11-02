@@ -4,6 +4,10 @@
 
 **Live:** https://carpe-latin.vercel.app (Vercel project `carpe-latin`)
 
+**Open source** under the [MIT license](LICENSE). Free, no account, no ads. Corrections to the Latin are very welcome: open an issue or a pull request.
+
+![Carpe: Λατινικά για τις Πανελλαδικές, σαν παιχνίδι](app/brand/og.png)
+
 **English in brief.** Carpe is a playful, Duolingo-style web app that teaches Latin to a Greek Γ΄ Λυκείου student sitting the Panhellenic exams (Λατινικά, Ομάδα Προσανατολισμού Ανθρωπιστικών Σπουδών, June 2027). It is a sibling of [Skepsis](https://github.com/ionpetro/skepsis) and keeps its tricks: guess-first openers, build-from-tiles, match pairs, a yes/no sorting game, spaced review, streaks with freezes and no hearts, badges, a speed round, a mascot with moods. The UI and every explanation are in modern Greek with the terminology Greek schools use; the Latin follows the school textbook and the Τζάρτζανος grammar. Plain JavaScript, no framework, one HTML file. Run `npm test && npm run build`, then serve `app/vercel/`. The rest of this file is in Greek, for the people who will use and extend it.
 
 ---

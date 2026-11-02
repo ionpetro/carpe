@@ -1,6 +1,6 @@
 // Public website for Vercel: the app at "/", a crawlable «Λεξιλόγιο» page with every word, an about
 // page, sitemap, robots, 404, web manifest and SVG icons / og image. Greek lang tags throughout. No analytics.
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, copyFileSync } from "node:fs";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
@@ -21,8 +21,8 @@ function head({ title, desc, path, type = "website", jsonld = [] }) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${url}">
-<meta property="og:type" content="${type}"><meta property="og:site_name" content="${NAME}"><meta property="og:locale" content="el_GR"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE}/og.svg"><meta property="og:image:alt" content="${esc(NAME)}: ${esc(TAGLINE)}">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${SITE}/og.svg">
+<meta property="og:type" content="${type}"><meta property="og:site_name" content="${NAME}"><meta property="og:locale" content="el_GR"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SITE}/og.png"><meta property="og:image:width" content="1600"><meta property="og:image:height" content="900"><meta property="og:image:alt" content="${esc(NAME)}: ${esc(TAGLINE)}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(desc)}"><meta name="twitter:image" content="${SITE}/og.png">
 ${ICONS}${FONTS}
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}`;
 }
@@ -129,6 +129,8 @@ export function buildSite(appMarkup, outDir) {
   w("favicon.svg", iconSvg(64));
   w("icon.svg", iconSvg(512));
   w("og.svg", ogSvg());
+  // X and most chat apps ignore SVG previews: ship the rendered PNG from brand/og.html too
+  copyFileSync(new URL("./brand/og.png", import.meta.url), new URL("og.png", outDir));
   w("manifest.webmanifest", JSON.stringify({ name: `${NAME}: ${TAGLINE}`, short_name: NAME, lang: "el", description: DESC, start_url: "/", display: "standalone", background_color: "#f7f4ee", theme_color: "#6d3fa6", icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any maskable" }] }, null, 2));
   w("vercel.json", JSON.stringify({
     cleanUrls: true, trailingSlash: false,
