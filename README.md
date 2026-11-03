@@ -22,7 +22,7 @@
 - **Carpe** (αυτή εδώ): Λατινικά για τις Πανελλαδικές. [Παίξε](https://carpe-latin.vercel.app) · [GitHub](https://github.com/ionpetro/carpe)
 - **Gnothi**: Αρχαία Ελληνικά για τις Πανελλαδικές. [Παίξε](https://gnothi-greek.vercel.app) · [GitHub](https://github.com/ionpetro/gnothi)
 - **Objection**: προετοιμασία για τις εξετάσεις δικηγόρων των ΗΠΑ. [Παίξε](https://objection-bar.vercel.app) · [GitHub](https://github.com/ionpetro/objection)
-- **Agora**: πωλήσεις και διαπραγμάτευση, με ηθική. [Παίξε](https://agora-sales.vercel.app) · [GitHub](https://github.com/ionpetro/agora)
+- **Agora**: πωλήσεις και διαπραγμάτευση, με ηθική. [Παίξε](https://agora-sales-xi.vercel.app) · [GitHub](https://github.com/ionpetro/agora)
 - **Oikos**: οικονομικά και κίνητρα. [Παίξε](https://oikos-azure-five.vercel.app) · [GitHub](https://github.com/ionpetro/oikos)
 
 ## Τι είναι
