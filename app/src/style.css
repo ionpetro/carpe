@@ -447,3 +447,5 @@ body.run-open { overflow: hidden; } /* the page behind a run must not scroll und
 .prow.me { background: var(--brand-soft); border-radius: 12px; }
 .sitenote .sister { font-weight: 800; }
 .sitenote .sister a { color: var(--brand); }
+
+.sitenote-sub { font-size: 12px; margin-top: 0; }

@@ -18,6 +18,17 @@
   function track(event, props = {}) {
     try { if (window.posthog && typeof window.posthog.capture === "function") window.posthog.capture(event, props); } catch { /* analytics must never break the app */ }
   }
+  // ---------- sister apps ----------
+  /** The family of free, open-source learning apps. Keep this list the same in Skepsis, Carpe, Gnothi and Objection (app.js and site.mjs). */
+  const FAMILY = [
+    { id: "skepsis", name: "Skepsis", url: "https://skepsis-greek.vercel.app", repo: "https://github.com/ionpetro/skepsis", en: "the Greek hiding in everyday English", el: "οι ελληνικές ρίζες που κρύβονται στα αγγλικά" },
+    { id: "carpe", name: "Carpe", url: "https://carpe-latin.vercel.app", repo: "https://github.com/ionpetro/carpe", en: "Latin for Greece's national exams", el: "Λατινικά για τις Πανελλαδικές" },
+    { id: "gnothi", name: "Gnothi", url: "https://gnothi-greek.vercel.app", repo: "https://github.com/ionpetro/gnothi", en: "Ancient Greek for Greece's national exams", el: "Αρχαία Ελληνικά για τις Πανελλαδικές" },
+    { id: "objection", name: "Objection", url: "https://objection-bar.vercel.app", repo: "https://github.com/ionpetro/objection", en: "prep for the US bar exam", el: "προετοιμασία για τις εξετάσεις δικηγόρων των ΗΠΑ" },
+  ];
+  /** Links to the other apps in the family, tagged so each app's analytics shows where visitors came from. */
+  const sisterLinks = () => FAMILY.filter((a) => a.id !== "carpe").map((a) => `<a href="${a.url}/?utm_source=carpe&utm_medium=sister_link" target="_blank" rel="noopener" data-sister="${a.id}">${a.name}</a> (${a.el})`).join(" · ");
+  const sisterNote = () => `<p class="sister">Κι άλλες δωρεάν εφαρμογές ανοιχτού κώδικα σαν αυτή: ${sisterLinks()}</p>`;
   const REPO = "https://github.com/ionpetro/carpe";
   /** Link to the open source code. `where` says which button was clicked, for analytics. */
   const ghLink = (cls, where, inner) => `<a class="${cls}" href="${REPO}" target="_blank" rel="noopener" data-gh="${where}" aria-label="Ο κώδικας του Carpe στο GitHub">${inner}</a>`;
@@ -241,7 +252,7 @@
   function tabbar() {
     return `<nav class="tabbar" aria-label="Ενότητες"><div class="tabbar-inner">${TABS.map((t) => `<button class="tab" data-tab="${t.id}" ${ui.tab === t.id ? 'aria-current="page"' : ""}>${t.icon}<span>${t.label}</span></button>`).join("")}</div></nav>`;
   }
-  function siteNote() { return `<footer class="sitenote"><p class="sister">Αδελφή εφαρμογή: <a href="https://skepsis-greek.vercel.app/?utm_source=carpe&utm_medium=sister_link" target="_blank" rel="noopener">Skepsis</a>, οι ελληνικές ρίζες που κρύβονται στα αγγλικά.</p><p><b>${FREE_NOTE}</b></p>${ghLink("btn ghost gh-cta", "footer", `${I.github}<span>Ο κώδικας στο GitHub</span>`)}<p>Η πρόοδος αποθηκεύεται σ' αυτή τη συσκευή. Οι τύποι ελέγχονται στη Γραμματική Τζάρτζανου και στο σχολικό βιβλίο· όπου υπάρχει αμφιβολία, η κάρτα το λέει.</p></footer>`; }
+  function siteNote() { return `<footer class="sitenote">${sisterNote()}<p><b>${FREE_NOTE}</b></p>${ghLink("btn ghost gh-cta", "footer", `${I.github}<span>Αστέρι στο GitHub</span>`)}<p class="sitenote-sub">Ένα αστέρι βοηθά κι άλλους να το βρουν.</p><p>Η πρόοδος αποθηκεύεται σ' αυτή τη συσκευή. Οι τύποι ελέγχονται στη Γραμματική Τζάρτζανου και στο σχολικό βιβλίο· όπου υπάρχει αμφιβολία, η κάρτα το λέει.</p></footer>`; }
 
   function render() {
     if (!S.onboarded) { app().innerHTML = onboarding(); bindOnboarding(); return; }
@@ -496,6 +507,7 @@
   function bindCommon() {
     const root = app();
     $$("[data-gh]", root).forEach((a) => a.addEventListener("click", () => track("github_clicked", { where: a.dataset.gh })));
+    $$("[data-sister]", root).forEach((a) => a.addEventListener("click", () => track("sister_app_clicked", { to: a.dataset.sister })));
     $$("[data-tab]", root).forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tab)));
     $$("[data-start]", root).forEach((b) => b.addEventListener("click", () => startNode(E.pathNodes(IX).find((n) => n.id === b.dataset.start))));
     $$("[data-goal]", root).forEach((b) => b.addEventListener("click", () => { const from = S.goal; S.goal = +b.dataset.goal; if (from !== S.goal) track("goal_changed", { from_xp: from, to_xp: S.goal }); save(); render(); }));
