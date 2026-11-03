@@ -33,7 +33,7 @@
   const sisterNote = () => `<p class="sister">Κι άλλες δωρεάν εφαρμογές ανοιχτού κώδικα σαν αυτή: ${sisterLinks()}</p>`;
   const REPO = "https://github.com/ionpetro/carpe";
   /** Link to the open source code. `where` says which button was clicked, for analytics. */
-  const ghLink = (cls, where, inner) => `<a class="${cls}" href="${REPO}" target="_blank" rel="noopener" data-gh="${where}" aria-label="Ο κώδικας του Carpe στο GitHub">${inner}</a>`;
+  const ghLink = (cls, where, inner, label) => `<a class="${cls}" href="${REPO}" target="_blank" rel="noopener" data-gh="${where}" aria-label="${label || "Ο κώδικας του Carpe στο GitHub"}" title="${label || "Ο κώδικας του Carpe στο GitHub"}">${inner}</a>`;
   // ---------- GitHub star prompt ----------
   // Asked on the lesson-finished screen, never as a pop-up. The logs (Nov 2026) show nobody who
   // finished a lesson had clicked GitHub, and most finishers stop after one lesson, so: ask after
@@ -68,6 +68,7 @@
   const I = {
     trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9.5 17h5"/></svg>',
     github: '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>',
+    star: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.5 2.8 6.3 6.7.6-5.1 4.5 1.5 6.7L12 17.1l-5.9 3.5 1.5-6.7L2.5 9.4l6.7-.6z"/></svg>',
     flame: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c1 3.5-1.6 5.3-2.9 7.3C7.6 11.5 7 13 7 14.6 7 18.1 9.3 21 12 21s5-2.6 5-6.2c0-2.1-.9-3.7-2-5 .1 1.6-.5 2.8-1.6 3.3.5-3.6-.6-7.6-1.4-11.1z"/></svg>',
     coin: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="currentColor"/><text x="12" y="16" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="var(--surface)">D</text></svg>',
     shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 7.6 8 9 4.6-1.4 8-4.5 8-9V6z"/><path d="M12 7v10M8 12h8"/></svg>',
@@ -248,7 +249,7 @@
         <span class="stat" title="Άδειες (streak freezes)" style="color:var(--brand)">${I.shield}<span>${S.freezes}</span></span>
         <span class="stat xp" title="Δηνάρια">${I.coin}<span>${S.xp}</span></span>
       </div>
-      ${ghLink("gh", "topbar", `${I.github}<span class="gh-label">GitHub</span>`)}
+      ${ghLink("gh", "topbar", `${I.github}<span class="gh-label">${I.star}<span class="gh-text">Star</span></span>`, "Βάλε αστέρι στο Carpe στο GitHub")}
     </header>`;
   }
   function tabbar() {
@@ -257,7 +258,7 @@
   function siteNote() { return `<footer class="sitenote">${sisterNote()}<p><b>${FREE_NOTE}</b></p>${ghLink("btn ghost gh-cta", "footer", `${I.github}<span>Αστέρι στο GitHub</span>`)}<p class="sitenote-sub">Ένα αστέρι βοηθά κι άλλους να το βρουν.</p><p>Η πρόοδος αποθηκεύεται σ' αυτή τη συσκευή. Οι τύποι ελέγχονται στη Γραμματική Τζάρτζανου και στο σχολικό βιβλίο· όπου υπάρχει αμφιβολία, η κάρτα το λέει.</p></footer>`; }
 
   function render() {
-    if (!S.onboarded) { app().innerHTML = onboarding(); bindOnboarding(); return; }
+    if (!S.onboarded) { app().innerHTML = topbar() + onboarding(); bindOnboarding(); return; }
     const body = { learn: learnView, lex: lexView, board: boardView, me: meView }[ui.tab]();
     app().innerHTML = topbar() + `<main class="view">${body}${siteNote()}</main>` + tabbar();
     bindCommon();
