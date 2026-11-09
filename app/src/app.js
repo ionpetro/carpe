@@ -266,13 +266,13 @@
     bindCommon();
   }
 
-  // ---------- weekly board (public website) ----------
-  // No database: every few hours a job adds up each player's XP for the week from the anonymous
+  // ---------- all-time board (public website) ----------
+  // No database: every few hours a job adds up each player's XP since launch from the anonymous
   // PostHog events we already send, and publishes it as a small file. Players appear under a name
   // made from a hash of their anonymous PostHog id; raw ids are never published. Your own row uses
   // your live XP from this browser.
   const BOARD_URL = "https://skepsis-carpe-boards.vercel.app/carpe.json";
-  const board = { data: null, loading: false, failed: false, me: null };
+  const board = { data: null, loading: false, failed: false, me: null, at: 0 };
   const NAME_A = ["Velox", "Fortis", "Sapiens", "Audax", "Felix", "Prudens", "Ferox", "Nobilis", "Ingens", "Vigilans", "Constans", "Potens", "Elegans", "Fidelis", "Agilis", "Tenax"];
   const NAME_B = ["Lupus", "Aquila", "Leo", "Ursus", "Vulpes", "Corvus", "Cervus", "Taurus", "Noctua", "Delphinus", "Equus", "Aper", "Columba", "Draco", "Cygnus", "Castor"];
   const nickname = (h) => `${NAME_B[parseInt(h.slice(4, 8), 16) % NAME_B.length]} ${NAME_A[parseInt(h.slice(0, 4), 16) % NAME_A.length]}`;
@@ -288,9 +288,11 @@
     if (board.loading) return;
     board.loading = true; board.failed = false;
     try {
-      const res = await fetch(BOARD_URL, { cache: "no-store" });
+      // The query string skips any CDN or browser copy, so a fresh publish shows up right away.
+      const res = await fetch(`${BOARD_URL}?t=${Date.now()}`, { cache: "no-store" });
       if (!res.ok) throw new Error(String(res.status));
       board.data = await res.json();
+      board.at = Date.now();
     } catch { board.failed = true; }
     try {
       const id = window.posthog && typeof window.posthog.get_distinct_id === "function" ? window.posthog.get_distinct_id() : null;
@@ -303,15 +305,18 @@
     if (ui.tab === "board" && !ui.overlay) render();
   }
   function boardView() {
-    if (!board.data && !board.failed) { loadBoard(); return `<section class="card empty">${mascot()}<p>Φορτώνει η κατάταξη της εβδομάδας…</p></section>`; }
+    if (!board.data && !board.failed) { loadBoard(); return `<section class="card empty">${mascot()}<p>Φορτώνει η κατάταξη…</p></section>`; }
+    // Opening the tab again after a few minutes fetches the latest board in the background.
+    if (board.data && Date.now() - board.at > 5 * 60000) loadBoard();
     if (!board.data) return `<section class="card empty">${mascot("sad")}<p>Η κατάταξη δεν φορτώνει τώρα. Δοκίμασε ξανά αργότερα.</p></section>`;
-    const t = today(), wk = E.weekKey(t), d = board.data;
-    const sameWeek = d.week === wk;
+    const t = today(), d = board.data;
+    // Only trust an all-time file; an older weekly file would mix up the numbers.
+    const allTime = d.period === "all";
     const meH = board.me || localBoardId();
-    const myXp = E.weekXp(S, t);
-    const others = sameWeek ? d.top.filter((p) => p.h !== meH) : [];
-    const mine = sameWeek ? d.top.find((p) => p.h === meH) : null;
-    const allXp = sameWeek ? d.all_xp.slice() : [];
+    const myXp = S.xp || 0;
+    const others = allTime ? d.top.filter((p) => p.h !== meH) : [];
+    const mine = allTime ? d.top.find((p) => p.h === meH) : null;
+    const allXp = allTime ? d.all_xp.slice() : [];
     if (mine) allXp.splice(allXp.indexOf(mine.xp), 1);
     const total = allXp.length + (myXp > 0 ? 1 : 0);
     const rank = myXp > 0 ? 1 + allXp.filter((x) => x > myXp).length : null;
@@ -329,14 +334,14 @@
         <span class="pts">${p.xp} δην.</span>
       </div>`;
     return `
-      <section style="display:flex;flex-direction:column;gap:6px"><div class="eyebrow">Αρένα · αυτή την εβδομάδα</div><h1>Κατάταξη εβδομάδας</h1>
-        <p class="muted" style="font-weight:700">Ξεκινά από την αρχή κάθε Δευτέρα. Όλοι εμφανίζονται με ένα τυχαίο λατινικό όνομα. Το δικό σου είναι <b>${esc(nickname(meH))}</b>.</p></section>
+      <section style="display:flex;flex-direction:column;gap:6px"><div class="eyebrow">Αρένα · όλων των εποχών</div><h1>Κατάταξη</h1>
+        <p class="muted" style="font-weight:700">Μετράει κάθε δηνάριο που έχεις κερδίσει ποτέ. Όλοι εμφανίζονται με ένα τυχαίο λατινικό όνομα. Το δικό σου είναι <b>${esc(nickname(meH))}</b>.</p></section>
       <section class="card" style="display:flex;flex-direction:column;gap:6px">
-        ${rank ? `<h3>Είσαι #${rank} από ${total} αυτή την εβδομάδα${total >= 5 ? ` · στο ${Math.max(1, Math.ceil((rank / total) * 100))}% των καλύτερων` : ""}</h3>` : `<h3>Τελείωσε ένα μάθημα για να μπεις στην κατάταξη</h3>`}
-        <p class="muted" style="font-weight:700;font-size:14px">${myXp} δηνάρια αυτή την εβδομάδα · ενημέρωση πριν από ${hrs < 1 ? "λιγότερο από μία ώρα" : hrs === 1 ? "1 ώρα" : hrs + " ώρες"}</p>
+        ${rank ? `<h3>Είσαι #${rank} από ${total}${total >= 5 ? ` · στο ${Math.max(1, Math.ceil((rank / total) * 100))}% των καλύτερων` : ""}</h3>` : `<h3>Τελείωσε ένα μάθημα για να μπεις στην κατάταξη</h3>`}
+        <p class="muted" style="font-weight:700;font-size:14px">${myXp} δηνάρια συνολικά · ενημέρωση πριν από ${hrs < 1 ? "λιγότερο από μία ώρα" : hrs === 1 ? "1 ώρα" : hrs + " ώρες"}</p>
       </section>
       <section class="card" style="display:flex;flex-direction:column;gap:10px">
-        ${rows.length ? `<div class="board">${shown.map(row).join("")}${tail ? `<div class="prow gap">…</div>${row(tail, rank - 1)}` : ""}</div>` : `<div class="empty">${mascot()}<p class="muted" style="font-weight:700">Κανείς δεν έχει πάρει δηνάρια αυτή την εβδομάδα. Τελείωσε ένα μάθημα και πάρε την πρώτη θέση.</p></div>`}
+        ${rows.length ? `<div class="board">${shown.map(row).join("")}${tail ? `<div class="prow gap">…</div>${row(tail, rank - 1)}` : ""}</div>` : `<div class="empty">${mascot()}<p class="muted" style="font-weight:700">Κανείς δεν έχει πάρει ακόμα δηνάρια. Τελείωσε ένα μάθημα και πάρε την πρώτη θέση.</p></div>`}
       </section>
       <p class="muted" style="font-size:13px;font-weight:700;text-align:center">Φτιάχνεται από τα ανώνυμα στοιχεία χρήσης που ήδη μετράμε με το PostHog. Χωρίς ονόματα, χωρίς λογαριασμούς, τίποτα καινούργιο δεν αποθηκεύεται. Η δική σου θέση ενημερώνεται αμέσως, των άλλων κάθε λίγες ώρες.</p>`;
   }
