@@ -1,5 +1,5 @@
 import re, json, unicodedata
-R='/Users/ionpetro/Documents/jobmachine/experiments/latin-panhellenic/research/'
+R='/Users/ionpetro/Documents/learning-apps/latin-panhellenic/research/'
 def norm(s):
     s=unicodedata.normalize('NFD',s); return ''.join(c for c in s if unicodedata.category(c)!='Mn').lower()
 lines=open(R+'official-2026-27-etymology-by-lesson.txt',encoding='utf8').read().split('\n')
