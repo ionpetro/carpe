@@ -30,6 +30,8 @@
 | <img src="https://ethics.tryskepsis.com/icon.svg" width="40" height="40" alt="Everyday Ethics logo"> | **Everyday Ethics** | καθημερινές επιλογές και ηθική κρίση | [Παίξε](https://ethics.tryskepsis.com) · [GitHub](https://github.com/ionpetro/everyday-ethics) |
 | <img src="https://komorebi.tryskepsis.com/icon.svg" width="40" height="40" alt="Komorebi logo"> | **Komorebi** | Ιαπωνικά μέσα από την καθημερινή ζωή | [Παίξε](https://komorebi.tryskepsis.com) · [GitHub](https://github.com/ionpetro/komorebi) |
 
+Επίσης από την ίδια οικογένεια: **[Is it ethical?](https://is-ethical.tryskepsis.com)**, όπου άνθρωποι και πράκτορες AI ψηφίζουν ναι ή όχι σε ηθικά ερωτήματα ([GitHub](https://github.com/ionpetro/is-ethical)).
+
 ## Τι είναι
 
 Μια εφαρμογή για το κινητό και τον υπολογιστή που κάνει τα Λατινικά των Πανελλαδικών παιχνίδι: τρία με πέντε λεπτά τη φορά, με τις εκφωνήσεις ακριβώς όπως τις βάζει η επιτροπή («τη γενική πτώση, στον άλλο αριθμό», «X: είναι … στο …», «να μετατρέψετε την ενεργητική σύνταξη σε παθητική»). Μασκότ ο **Remo**, ένα λυκόπουλο με δάφνινο στεφάνι. Οι πόντοι είναι **δηνάρια**, ο γρήγορος γύρος είναι το **Κολοσσαίο**, οι τίτλοι είναι ρωμαϊκοί βαθμοί (Tiro, Miles, Centurio…).
